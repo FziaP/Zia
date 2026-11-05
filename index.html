@@ -27,7 +27,7 @@ nav {
 .logo {font-size:25px;font-weight:800}
 nav a {color:var(--dark);text-decoration:none;margin-left:25px;font-size:14px}
 .hero {
-  min-height:650px; background:var(--mint);
+  min-height:650px; background:#ffffff;
   padding:75px 8%; display:grid;
   grid-template-columns:1.1fr .9fr;
   align-items:center; overflow:hidden;
@@ -55,6 +55,12 @@ h1 span {color:#568d68}
 .avatar {
   width:240px;height:300px;position:relative;
   animation:float 3s ease-in-out infinite;
+}
+.avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
 }
 .head {
   width:190px;height:205px;background:#d99570;
@@ -146,7 +152,24 @@ footer {padding:25px;text-align:center;font-size:13px}
   .project-grid {grid-template-columns:1fr}
   section {padding:65px 7%}
   h1 {letter-spacing:-3px}
+}.avatar-area::before {
+  content: "LOST IN THOUGHTS";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: clamp(40px, 7vw, 85px);
+  font-weight: 900;
+  color: #FFD700;
+  white-space: nowrap;
+  z-index: 0;
+  opacity: 0.65;
+  pointer-events: none;
 }
+
+.avatar {
+  position: relative;
+  z-index: 1;}
 </style>
 </head>
 <body>
@@ -175,15 +198,10 @@ footer {padding:25px;text-align:center;font-size:13px}
 
   <div class="avatar-area">
     <div class="badge b1">Creative mind ✦</div>
-    <div class="avatar">
-      <div class="hair"></div>
-      <div class="head"></div>
-      <div class="eye left"></div>
-      <div class="eye right"></div>
-      <div class="nose"></div>
-      <div class="smile"></div>
-      <div class="body"></div>
-    </div>
+   <div class="avatar">
+    <img src="Grumpy%20Thinking%20Girl%20with%20Stylus.png"
+         alt="Zia's creative character">
+</div>
     <div class="badge b2">Designing dreams ♥</div>
   </div>
 </header>
