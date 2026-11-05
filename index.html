@@ -1,16 +1,14 @@
 
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Fathima Zia | Creative Designer</title>
+<title>Fathima Zia | Creative Portfolio</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
@@ -99,7 +97,6 @@ a {
 
 .hero {
     position: relative;
-
     width: 100%;
     height: 100vh;
     min-height: 650px;
@@ -120,7 +117,6 @@ a {
 
 .hero-title {
     position: absolute;
-
     top: 48%;
     left: 50%;
 
@@ -130,15 +126,12 @@ a {
     text-align: center;
 
     font-family: 'Space Grotesk', sans-serif;
-
     font-size: clamp(45px, 10vw, 145px);
     font-weight: 700;
-
     letter-spacing: -7px;
     line-height: 1;
 
     color: var(--yellow);
-
     white-space: nowrap;
 
     z-index: 1;
@@ -159,7 +152,6 @@ a {
     transform: translateX(-50%);
 
     z-index: 2;
-
     pointer-events: none;
 }
 
@@ -173,29 +165,29 @@ a {
     display: block;
 }
 
-/* Hero bottom text */
+/* Video loading message */
 
-.hero-label {
+.video-message {
     position: absolute;
-
-    bottom: 30px;
+    top: 65%;
     left: 50%;
 
-    transform: translateX(-50%);
+    transform: translate(-50%, -50%);
 
-    font-size: 11px;
-    font-weight: 700;
+    z-index: 4;
 
-    letter-spacing: 4px;
+    font-size: 13px;
+    color: var(--grey);
 
-    color: var(--brown);
-
-    white-space: nowrap;
-    z-index: 3;
+    text-align: center;
     pointer-events: none;
 }
 
-/* Cursor hint */
+.video-message.hidden {
+    display: none;
+}
+
+/* Hero instructions */
 
 .cursor-hint {
     position: absolute;
@@ -208,6 +200,25 @@ a {
     color: var(--grey);
 
     z-index: 3;
+    white-space: nowrap;
+    pointer-events: none;
+}
+
+.hero-label {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 4px;
+
+    color: var(--brown);
+
+    white-space: nowrap;
+    z-index: 3;
     pointer-events: none;
 }
 
@@ -217,7 +228,6 @@ a {
 
 .intro {
     min-height: 85vh;
-
     padding: 120px 10%;
 
     display: flex;
@@ -230,21 +240,16 @@ a {
 
 .section-label {
     color: #d6b500;
-
     font-size: 13px;
     font-weight: 700;
-
     letter-spacing: 4px;
-
     margin-bottom: 25px;
 }
 
 .intro h1 {
     font-family: 'Space Grotesk', sans-serif;
-
     font-size: clamp(55px, 10vw, 125px);
     line-height: 0.95;
-
     margin-bottom: 35px;
 }
 
@@ -254,10 +259,8 @@ a {
 
 .intro p {
     max-width: 700px;
-
     font-size: 19px;
     line-height: 1.9;
-
     color: #e6ded9;
 }
 
@@ -272,9 +275,7 @@ a {
 
 .about h2 {
     font-family: 'Space Grotesk', sans-serif;
-
     font-size: clamp(40px, 7vw, 80px);
-
     margin-bottom: 35px;
 }
 
@@ -285,10 +286,8 @@ a {
 
 .about p {
     max-width: 850px;
-
     font-size: 18px;
     line-height: 2;
-
     color: var(--grey);
 }
 
@@ -303,25 +302,19 @@ a {
 
 .skills h2 {
     font-family: 'Space Grotesk', sans-serif;
-
     font-size: clamp(40px, 7vw, 75px);
-
     margin-bottom: 50px;
 }
 
 .skill-grid {
     display: grid;
-
     grid-template-columns: repeat(2, 1fr);
-
     gap: 25px;
 }
 
 .skill-card {
     background: var(--white);
-
     padding: 40px;
-
     border-radius: 15px;
 
     transition: transform 0.3s ease,
@@ -330,15 +323,12 @@ a {
 
 .skill-card:hover {
     transform: translateY(-10px);
-
     box-shadow: 0 15px 35px rgba(48,35,29,0.12);
 }
 
 .skill-card h3 {
     font-family: 'Space Grotesk', sans-serif;
-
     font-size: 25px;
-
     margin-bottom: 20px;
 }
 
@@ -353,23 +343,19 @@ a {
 
 .contact {
     padding: 120px 10%;
-
     background: var(--white);
     text-align: center;
 }
 
 .contact h2 {
     font-family: 'Space Grotesk', sans-serif;
-
     font-size: clamp(40px, 7vw, 85px);
-
     margin-bottom: 25px;
 }
 
 .contact p {
     color: var(--grey);
     font-size: 17px;
-
     margin-bottom: 35px;
 }
 
@@ -380,11 +366,9 @@ a {
     color: var(--brown);
 
     padding: 16px 35px;
-
     border-radius: 50px;
 
     font-weight: 700;
-
     transition: transform 0.3s;
 }
 
@@ -398,17 +382,14 @@ a {
 
 footer {
     padding: 30px;
-
     text-align: center;
-
     background: var(--brown);
     color: var(--white);
-
     font-size: 13px;
 }
 
 /* =========================
-   RESPONSIVE DESIGN
+   MOBILE RESPONSIVE
 ========================= */
 
 @media (max-width: 700px) {
@@ -469,7 +450,6 @@ footer {
     .skill-card {
         padding: 28px;
     }
-
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -527,14 +507,18 @@ footer {
             playsinline
             preload="auto">
 
-            <source
-                src="./thinking-character.mp4"
-                type="video/mp4">
+            <!-- EXACT FILENAME FROM YOUR GITHUB SCREENSHOT -->
 
-            Your browser does not support video.
+            <source
+                src="./thinking-character.mp4.mp4"
+                type="video/mp4">
 
         </video>
 
+    </div>
+
+    <div id="videoMessage" class="video-message">
+        Loading character animation...
     </div>
 
     <div class="cursor-hint">
@@ -615,50 +599,35 @@ footer {
     <div class="skill-grid">
 
         <div class="skill-card">
-
             <h3>01. Graphic Design</h3>
-
             <p>
                 Photoshop · Illustrator · CorelDRAW · Canva ·
                 Brand Identity · Visual Communication
             </p>
-
         </div>
 
-
         <div class="skill-card">
-
             <h3>02. Digital Marketing</h3>
-
             <p>
                 SEO · Google Ads · Meta Ads · Social Media Marketing ·
                 GA4 · Content Strategy
             </p>
-
         </div>
 
-
         <div class="skill-card">
-
             <h3>03. Video & Motion</h3>
-
             <p>
                 Premiere Pro · After Effects · CapCut ·
                 Video Editing · Motion Graphics
             </p>
-
         </div>
 
-
         <div class="skill-card">
-
             <h3>04. AI & Animation</h3>
-
             <p>
                 AI Image Generation · AI Animation ·
                 Creative Storytelling · 3D Visual Concepts
             </p>
-
         </div>
 
     </div>
@@ -694,47 +663,62 @@ footer {
 ========================= -->
 
 <footer>
-
     © 2026 Fathima Zia P. All rights reserved.
-
 </footer>
 
 
 <!-- =========================
-     CURSOR CONTROLLED VIDEO
+     MOUSE CONTROLLED ANIMATION
 ========================= -->
 
 <script>
 
-const hero = document.querySelector(".hero");
+const hero = document.getElementById("home");
 const video = document.getElementById("thinkingVideo");
+const videoMessage = document.getElementById("videoMessage");
 
 let targetTime = 0;
 let isSeeking = false;
-let animationFrame = null;
 let videoReady = false;
+let animationFrame = null;
 
 
-// Wait for video metadata
+// VIDEO SUCCESSFULLY LOADED
 
 video.addEventListener("loadedmetadata", () => {
 
     videoReady = true;
-
     video.pause();
-
-    // Start at the middle frame
 
     targetTime = video.duration / 2;
 
     video.currentTime = targetTime;
 
+    videoMessage.classList.add("hidden");
+
+    console.log("Character video loaded!");
+    console.log("Video duration:", video.duration);
+
 });
 
 
-// Mouse movement controls video timeline
+// VIDEO ERROR HANDLING
 
-function handleCursor(event) {
+video.addEventListener("error", () => {
+
+    videoMessage.classList.remove("hidden");
+
+    videoMessage.textContent =
+        "Video could not load. Please check the video filename.";
+
+    console.error("Video error:", video.error);
+
+});
+
+
+// CONTROL VIDEO USING MOUSE
+
+function handleMouseMovement(event) {
 
     if (!videoReady) return;
 
@@ -747,7 +731,7 @@ function handleCursor(event) {
 
     mousePosition = Math.max(0, Math.min(1, mousePosition));
 
-    // Convert cursor position to video time
+    // Convert cursor position into video time
 
     targetTime = mousePosition * (video.duration - 0.05);
 
@@ -756,7 +740,7 @@ function handleCursor(event) {
 }
 
 
-// Smooth video scrubbing
+// UPDATE VIDEO FRAME
 
 function updateVideo() {
 
@@ -770,7 +754,7 @@ function updateVideo() {
 
         const difference = targetTime - video.currentTime;
 
-        if (Math.abs(difference) > 0.025) {
+        if (Math.abs(difference) > 0.02) {
 
             isSeeking = true;
 
@@ -786,15 +770,15 @@ function updateVideo() {
 }
 
 
-// Wait until current frame is loaded
+// WAIT FOR FRAME TO FINISH LOADING
 
 video.addEventListener("seeked", () => {
 
     isSeeking = false;
 
-    // Continue if cursor moved while video was seeking
+    // If cursor moved while seeking, update again
 
-    if (Math.abs(targetTime - video.currentTime) > 0.025) {
+    if (Math.abs(targetTime - video.currentTime) > 0.02) {
 
         updateVideo();
 
@@ -803,12 +787,12 @@ video.addEventListener("seeked", () => {
 });
 
 
-// Desktop and touch cursor interaction
+// MOUSE MOVEMENT EVENT
 
-hero.addEventListener("pointermove", handleCursor);
+hero.addEventListener("pointermove", handleMouseMovement);
 
 
-// Return to centre when cursor leaves
+// RETURN CHARACTER TO CENTRE
 
 hero.addEventListener("pointerleave", () => {
 
@@ -819,6 +803,28 @@ hero.addEventListener("pointerleave", () => {
     updateVideo();
 
 });
+
+
+// MOBILE TOUCH INTERACTION
+
+hero.addEventListener("touchmove", (event) => {
+
+    if (!videoReady) return;
+
+    const touch = event.touches[0];
+
+    const rect = hero.getBoundingClientRect();
+
+    const position = Math.max(
+        0,
+        Math.min(1, (touch.clientX - rect.left) / rect.width)
+    );
+
+    targetTime = position * (video.duration - 0.05);
+
+    updateVideo();
+
+}, { passive: true });
 
 </script>
 
