@@ -75,16 +75,15 @@
       justify-content: center;
       overflow: hidden;
 
-      background:
-        radial-gradient(
-          ellipse at 50% 65%,
-          #805d3e 0%,
-          #60432f 45%,
-          #3c291f 100%
-        );
+      background: radial-gradient(
+        ellipse at 50% 65%,
+        #805d3e 0%,
+        #60432f 45%,
+        #3c291f 100%
+      );
     }
 
-    /* HERO TEXT - BEHIND VIDEO */
+    /* TEXT BEHIND CHARACTER */
 
     .hero-content {
       position: absolute;
@@ -114,13 +113,12 @@
       color: #f5c84c;
     }
 
-    /* CHARACTER VIDEO - IN FRONT OF TEXT */
+    /* CHARACTER IMAGE */
 
-    .hero-video-wrap {
+    .hero-image-wrap {
       position: absolute;
       bottom: -2%;
       left: 50%;
-      transform: translateX(-50%);
 
       width: min(750px, 95vw);
       height: 82vh;
@@ -130,22 +128,23 @@
       align-items: flex-end;
 
       z-index: 2;
-      animation: float 4s ease-in-out infinite;
       pointer-events: none;
-    }
 
-    .hero-video {
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-
-      transform: scale(1.15);
-      transform-origin: center bottom;
+      animation: float 2s ease-in-out infinite;
 
       will-change: transform;
     }
 
-    /* FLOATING ANIMATION */
+    .hero-image {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      object-position: center bottom;
+      transform: scale(1.15);
+      transform-origin: center bottom;
+    }
+
+    /* TWO SECOND FLOATING ANIMATION */
 
     @keyframes float {
       0%, 100% {
@@ -161,7 +160,6 @@
       position: absolute;
       bottom: 35px;
       z-index: 3;
-
       font-size: 11px;
       letter-spacing: 2px;
       color: #f5e8c9;
@@ -281,7 +279,7 @@
         letter-spacing: 3px;
       }
 
-      .hero-video-wrap {
+      .hero-image-wrap {
         width: 100%;
         height: 68vh;
       }
@@ -294,6 +292,17 @@
         font-size: 9px;
       }
     }
+
+    @media (prefers-reduced-motion: reduce) {
+      .hero-image-wrap {
+        animation: none;
+      }
+
+      html {
+        scroll-behavior: auto;
+      }
+    }
+
   </style>
 </head>
 
@@ -329,25 +338,20 @@
 
     </div>
 
-    <!-- CHARACTER VIDEO IN FRONT -->
+    <!-- CHARACTER IMAGE IN FRONT -->
 
-    <div class="hero-video-wrap">
+    <div class="hero-image-wrap" id="characterWrap">
 
-      <video
-        class="hero-video"
-        id="characterVideo"
-        muted
-        playsinline
-        preload="auto"
+      <img
+        class="hero-image"
+        src="./thinking-character.png"
+        alt="Creative character thinking"
       >
-        <source src="./z%20anim.mp4" type="video/mp4">
-        Your browser does not support HTML video.
-      </video>
 
     </div>
 
     <div class="hero-hint">
-      MOVE YOUR CURSOR TO INTERACT ↓
+      MOVE YOUR CURSOR TO INTERACT
     </div>
 
   </section>
@@ -425,50 +429,44 @@
     © 2026 ZIA. ALL RIGHTS RESERVED.
   </footer>
 
-  <!-- VIDEO INTERACTION -->
+  <!-- MOUSE FOLLOW INTERACTION -->
 
   <script>
 
-    const video = document.getElementById("characterVideo");
     const hero = document.querySelector(".hero");
+    const character = document.getElementById("characterWrap");
 
-    let targetTime = 0;
-    let lastInteraction = Date.now();
-    let animationFrame = null;
+    let targetX = 0;
+    let targetY = 0;
 
-    // VIDEO LOADED
+    let currentX = 0;
+    let currentY = 0;
 
-    video.addEventListener("loadedmetadata", () => {
-
-      if (video.duration && isFinite(video.duration)) {
-
-        targetTime = video.duration / 2;
-        video.currentTime = targetTime;
-
-        if (!animationFrame) {
-          animateVideo();
-        }
-      }
-
-    });
-
-    // CURSOR MOVEMENT
+    // MOUSE MOVEMENT
 
     hero.addEventListener("mousemove", (event) => {
 
-      if (!video.duration || !isFinite(video.duration)) return;
-
       const rect = hero.getBoundingClientRect();
 
-      const mouseX = event.clientX - rect.left;
+      const mouseX =
+        (event.clientX - rect.left) / rect.width;
 
-      const percentage = Math.max(
-        0,
-        Math.min(1, mouseX / rect.width)
-      );
+      const mouseY =
+        (event.clientY - rect.top) / rect.height;
 
-      targetTime = percentage * video.duration;
-      lastInteraction = Date.now();
+      // Subtle movement range
+
+      targetX = (mouseX - 0.5) * 24;
+      targetY = (mouseY - 0.5) * 14;
+
+    });
+
+    // RETURN TO CENTRE WHEN MOUSE LEAVES
+
+    hero.addEventListener("mouseleave", () => {
+
+      targetX = 0;
+      targetY = 0;
 
     });
 
@@ -476,66 +474,43 @@
 
     hero.addEventListener("touchmove", (event) => {
 
-      if (!video.duration || !isFinite(video.duration)) return;
-
-      const touchX = event.touches[0].clientX;
       const rect = hero.getBoundingClientRect();
 
-      const percentage = Math.max(
-        0,
-        Math.min(1, (touchX - rect.left) / rect.width)
-      );
+      const touchX =
+        (event.touches[0].clientX - rect.left) / rect.width;
 
-      targetTime = percentage * video.duration;
-      lastInteraction = Date.now();
+      const touchY =
+        (event.touches[0].clientY - rect.top) / rect.height;
+
+      targetX = (touchX - 0.5) * 24;
+      targetY = (touchY - 0.5) * 14;
 
     }, { passive: true });
 
-    // SMOOTH VIDEO SCRUBBING + IDLE MOVEMENT
+    hero.addEventListener("touchend", () => {
 
-    function animateVideo() {
+      targetX = 0;
+      targetY = 0;
 
-      if (video.duration && isFinite(video.duration)) {
+    });
 
-        const idleTime = Date.now() - lastInteraction;
+    // SMOOTH CHARACTER MOVEMENT
 
-        // Gentle idle animation
+    function moveCharacter() {
 
-        if (idleTime > 1800) {
+      currentX += (targetX - currentX) * 0.07;
+      currentY += (targetY - currentY) * 0.07;
 
-          const idleMotion =
-            Math.sin(Date.now() / 900) * 0.035;
+      character.style.marginLeft = `${currentX}px`;
+      character.style.marginBottom = `${currentY}px`;
 
-          targetTime =
-            video.duration * (0.5 + idleMotion);
-
-        }
-
-        // Smooth frame transition
-
-        const difference =
-          targetTime - video.currentTime;
-
-        if (
-          Math.abs(difference) > 0.04 &&
-          !video.seeking
-        ) {
-
-          const nextTime =
-            video.currentTime + difference * 0.12;
-
-          video.currentTime = Math.max(
-            0,
-            Math.min(video.duration, nextTime)
-          );
-
-        }
-
-      }
-
-      animationFrame = requestAnimationFrame(animateVideo);
+      requestAnimationFrame(moveCharacter);
 
     }
+
+    // START ANIMATION
+
+    moveCharacter();
 
   </script>
 
