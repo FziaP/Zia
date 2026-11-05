@@ -4,7 +4,6 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
   <title>Zia | Creative Designer & Digital Marketer</title>
 
   <style>
@@ -19,282 +18,302 @@
     }
 
     body {
-      background: #f8f5ed;
-      color: #493323;
       font-family: Arial, Helvetica, sans-serif;
-      overflow-x: hidden;
+      background: #fff;
+      color: #49321f;
+    }
+
+    :root {
+      --brown: #49321f;
+      --dark-brown: #2e2016;
+      --yellow: #f4c542;
+      --cream: #fff9e9;
+      --white: #ffffff;
     }
 
     /* NAVIGATION */
 
     nav {
       width: 100%;
-      padding: 28px 7%;
+      padding: 24px 8%;
       display: flex;
-      justify-content: space-between;
       align-items: center;
-      position: absolute;
-      top: 0;
-      left: 0;
+      justify-content: space-between;
+      background: #fff;
+      position: relative;
       z-index: 10;
     }
 
     .logo {
-      font-size: 22px;
+      font-size: 25px;
       font-weight: 900;
-      letter-spacing: 2px;
-      color: #fffaf0;
+      color: var(--brown);
     }
 
-    nav ul {
+    .nav-links {
       display: flex;
-      gap: 35px;
-      list-style: none;
+      gap: 32px;
     }
 
-    nav a {
-      color: #fffaf0;
+    .nav-links a {
       text-decoration: none;
+      color: var(--brown);
       font-size: 13px;
+      font-weight: bold;
       letter-spacing: 1px;
-      transition: color 0.3s;
     }
 
-    nav a:hover {
-      color: #f5c84c;
+    .nav-links a:hover {
+      color: #d5a91f;
     }
 
     /* HERO SECTION */
 
     .hero {
-      min-height: 100vh;
-      height: 100vh;
-      position: relative;
+      min-height: 85vh;
+      background: #fff;
       display: flex;
       align-items: center;
       justify-content: center;
+      position: relative;
       overflow: hidden;
-
-      background: radial-gradient(
-        ellipse at 50% 65%,
-        #805d3e 0%,
-        #60432f 45%,
-        #3c291f 100%
-      );
+      padding: 60px 8%;
     }
-
-    /* TEXT BEHIND CHARACTER */
 
     .hero-content {
-      position: absolute;
+      position: relative;
+      width: 100%;
+      max-width: 1200px;
+      min-height: 570px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .hero-heading {
+      position: relative;
       z-index: 1;
       text-align: center;
-      top: 24%;
-      width: 100%;
-      pointer-events: none;
+      line-height: 0.85;
+      user-select: none;
     }
 
-    .hero-content p {
-      color: #f5d98a;
-      font-size: 12px;
-      letter-spacing: 5px;
-      margin-bottom: 20px;
-    }
-
-    .hero-content h1 {
-      font-size: clamp(48px, 9vw, 115px);
+    .hero-heading .lost {
+      display: block;
+      color: var(--brown);
+      font-size: clamp(65px, 12vw, 155px);
       font-weight: 900;
-      letter-spacing: -5px;
-      line-height: 0.95;
-      color: #fffaf0;
+      letter-spacing: -8px;
     }
 
-    .hero-content h1 span {
-      color: #f5c84c;
+    .hero-heading .thoughts {
+      display: block;
+      color: var(--yellow);
+      font-size: clamp(65px, 12vw, 155px);
+      font-weight: 900;
+      letter-spacing: -8px;
     }
 
     /* CHARACTER IMAGE */
 
-    .hero-image-wrap {
+    .character-container {
       position: absolute;
-      bottom: -2%;
-      left: 50%;
-
-      width: min(750px, 95vw);
-      height: 82vh;
-
-      display: flex;
-      justify-content: center;
-      align-items: flex-end;
-
       z-index: 2;
-      pointer-events: none;
-
-      animation: float 2s ease-in-out infinite;
-
+      left: 50%;
+      top: 50%;
+      width: min(390px, 42vw);
+      transform: translate(-50%, -50%);
+      animation: floatCharacter 2s ease-in-out infinite;
       will-change: transform;
+      pointer-events: none;
     }
 
-    .hero-image {
+    .character-container img {
       width: 100%;
-      height: 100%;
+      height: auto;
+      display: block;
       object-fit: contain;
-      object-position: center bottom;
-      transform: scale(1.15);
-      transform-origin: center bottom;
+      filter: drop-shadow(0 15px 15px rgba(46, 32, 22, 0.12));
     }
 
-    /* TWO SECOND FLOATING ANIMATION */
-
-    @keyframes float {
+    @keyframes floatCharacter {
       0%, 100% {
-        translate: 0 0;
+        transform: translate(-50%, -50%) translateY(0);
       }
 
       50% {
-        translate: 0 -9px;
+        transform: translate(-50%, -50%) translateY(-13px);
       }
     }
 
-    .hero-hint {
+    /* INTRO TEXT */
+
+    .hero-intro {
       position: absolute;
-      bottom: 35px;
+      bottom: 15px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100%;
+      text-align: center;
       z-index: 3;
-      font-size: 11px;
-      letter-spacing: 2px;
-      color: #f5e8c9;
+      color: var(--brown);
+      font-size: 15px;
+      letter-spacing: 1px;
     }
 
-    /* GENERAL SECTIONS */
+    .hero-intro strong {
+      color: #c69b18;
+    }
+
+    /* COMMON SECTIONS */
 
     section:not(.hero) {
-      padding: 110px 8%;
-      background: #f8f5ed;
+      padding: 100px 10%;
     }
 
-    .section-label {
-      color: #b78a35;
-      font-size: 12px;
-      letter-spacing: 4px;
-      margin-bottom: 20px;
-      font-weight: 700;
-    }
-
-    section h2 {
-      font-size: clamp(35px, 6vw, 65px);
+    .section-title {
+      font-size: clamp(35px, 5vw, 55px);
+      font-weight: 900;
+      color: var(--brown);
       margin-bottom: 25px;
-      color: #493323;
-      line-height: 1.05;
     }
 
-    section p {
-      color: #79634e;
-      line-height: 1.8;
-      max-width: 700px;
-      font-size: 16px;
+    .section-title span {
+      color: #d8ad26;
+    }
+
+    /* ABOUT */
+
+    .about {
+      background: var(--cream);
+    }
+
+    .about-content {
+      max-width: 850px;
+      font-size: 18px;
+      line-height: 1.9;
+      color: #66503d;
     }
 
     /* SKILLS */
 
     .skills {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 15px;
-      margin-top: 30px;
+      background: #fff;
     }
 
-    .skills span {
-      border: 1px solid #c9b99f;
-      background: #fffdf7;
-      padding: 14px 22px;
-      border-radius: 30px;
-      color: #60432f;
-      font-size: 14px;
-      transition: 0.3s;
+    .skill-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 18px;
+      margin-top: 35px;
     }
 
-    .skills span:hover {
-      background: #f5c84c;
-      color: #493323;
-      border-color: #f5c84c;
-      transform: translateY(-4px);
+    .skill-card {
+      background: var(--cream);
+      padding: 28px 20px;
+      border-radius: 15px;
+      border: 1px solid #f1dfaa;
+      font-weight: bold;
+      text-align: center;
+      color: var(--brown);
+      transition: 0.3s ease;
+    }
+
+    .skill-card:hover {
+      background: var(--yellow);
+      transform: translateY(-6px);
     }
 
     /* CONTACT */
 
     .contact {
-      background: #efe6d6 !important;
+      background: var(--brown);
+      color: #fff;
+      text-align: center;
     }
 
-    .contact a {
-      color: #a87519;
+    .contact .section-title {
+      color: #fff;
+    }
+
+    .contact p {
+      margin-bottom: 25px;
+      line-height: 1.8;
+    }
+
+    .contact-button {
+      display: inline-block;
+      padding: 14px 30px;
+      border-radius: 30px;
+      background: var(--yellow);
+      color: var(--brown);
       text-decoration: none;
-      font-weight: 700;
+      font-weight: bold;
+      transition: 0.3s;
     }
 
-    .contact a:hover {
-      color: #60432f;
+    .contact-button:hover {
+      background: #fff;
+      transform: translateY(-3px);
     }
-
-    /* FOOTER */
 
     footer {
-      padding: 30px 8%;
-      background: #3c291f;
-      color: #f5e8c9;
-      font-size: 12px;
+      background: var(--dark-brown);
+      color: #fff;
       text-align: center;
+      padding: 22px;
+      font-size: 13px;
     }
 
     /* MOBILE RESPONSIVE */
 
-    @media (max-width: 600px) {
-
+    @media (max-width: 650px) {
       nav {
-        padding: 22px 5%;
+        padding: 20px 5%;
       }
 
       .logo {
-        font-size: 17px;
+        font-size: 20px;
       }
 
-      nav ul {
-        gap: 13px;
+      .nav-links {
+        gap: 12px;
       }
 
-      nav a {
+      .nav-links a {
         font-size: 10px;
       }
 
+      .hero {
+        min-height: 75vh;
+        padding: 30px 4%;
+      }
+
       .hero-content {
-        top: 27%;
+        min-height: 450px;
       }
 
-      .hero-content h1 {
-        letter-spacing: -2px;
+      .hero-heading .lost,
+      .hero-heading .thoughts {
+        letter-spacing: -4px;
       }
 
-      .hero-content p {
-        font-size: 9px;
-        letter-spacing: 3px;
+      .character-container {
+        width: min(290px, 65vw);
       }
 
-      .hero-image-wrap {
-        width: 100%;
-        height: 68vh;
+      .hero-intro {
+        font-size: 12px;
+        bottom: 5px;
       }
 
       section:not(.hero) {
-        padding: 80px 7%;
-      }
-
-      .hero-hint {
-        font-size: 9px;
+        padding: 70px 7%;
       }
     }
 
     @media (prefers-reduced-motion: reduce) {
-      .hero-image-wrap {
+      .character-container {
         animation: none;
       }
 
@@ -302,216 +321,140 @@
         scroll-behavior: auto;
       }
     }
-
   </style>
 </head>
 
 <body>
 
   <!-- NAVIGATION -->
-
   <nav>
     <div class="logo">ZIA.</div>
 
-    <ul>
-      <li><a href="#home">HOME</a></li>
-      <li><a href="#about">ABOUT</a></li>
-      <li><a href="#skills">SKILLS</a></li>
-      <li><a href="#contact">CONTACT</a></li>
-    </ul>
+    <div class="nav-links">
+      <a href="#home">HOME</a>
+      <a href="#about">ABOUT</a>
+      <a href="#skills">SKILLS</a>
+      <a href="#contact">CONTACT</a>
+    </div>
   </nav>
 
   <!-- HERO SECTION -->
-
   <section class="hero" id="home">
-
-    <!-- TEXT BEHIND CHARACTER -->
 
     <div class="hero-content">
 
-      <p>CREATIVE DESIGNER & DIGITAL MARKETER</p>
+      <div class="hero-heading">
+        <span class="lost">LOST IN</span>
+        <span class="thoughts">THOUGHTS</span>
+      </div>
 
-      <h1>
-        LOST IN<br>
-        <span>THOUGHTS.</span>
-      </h1>
+      <!-- Replace the filename below with your exact image filename -->
+      <div class="character-container" id="character">
+        <img
+          src="thinking-character.png"
+          alt="Thinking character illustration"
+        >
+      </div>
+
+      <div class="hero-intro">
+        <strong>CREATIVE DESIGNER</strong>
+        &nbsp; | &nbsp; DIGITAL MARKETER
+      </div>
 
     </div>
-
-    <!-- CHARACTER IMAGE IN FRONT -->
-
-    <div class="hero-image-wrap" id="characterWrap">
-
-      <img
-        class="hero-image"
-        src="./thinking-character.png"
-        alt="Creative character thinking"
-      >
-
-    </div>
-
-    <div class="hero-hint">
-      MOVE YOUR CURSOR TO INTERACT
-    </div>
-
   </section>
 
   <!-- ABOUT SECTION -->
+  <section class="about" id="about">
 
-  <section id="about">
+    <h2 class="section-title">A LITTLE <span>ABOUT ME.</span></h2>
 
-    <div class="section-label">01 / ABOUT ME</div>
-
-    <h2>
-      A LITTLE ABOUT<br>
-      MY CREATIVE WORLD.
-    </h2>
-
-    <p>
-      I'm a creative-minded designer and digital marketer who loves
-      turning ideas into meaningful visual experiences. From graphic
-      design and branding to digital marketing, I enjoy exploring
-      creativity and bringing concepts to life.
-    </p>
+    <div class="about-content">
+      <p>
+        I'm a creative-minded designer and digital marketer who loves
+        turning ideas into meaningful visual experiences.
+        I enjoy exploring design, branding, creativity and digital
+        strategies to bring concepts to life.
+      </p>
+    </div>
 
   </section>
 
   <!-- SKILLS SECTION -->
+  <section class="skills" id="skills">
 
-  <section id="skills">
+    <h2 class="section-title">WHAT I <span>DO.</span></h2>
 
-    <div class="section-label">02 / WHAT I DO</div>
-
-    <h2>MY CREATIVE TOOLKIT.</h2>
-
-    <div class="skills">
-      <span>Graphic Design</span>
-      <span>Branding</span>
-      <span>Social Media Design</span>
-      <span>Digital Marketing</span>
-      <span>SEO</span>
-      <span>Meta Ads</span>
-      <span>Google Ads</span>
-      <span>Video Editing</span>
-      <span>Motion Graphics</span>
+    <div class="skill-grid">
+      <div class="skill-card">Graphic Design</div>
+      <div class="skill-card">Branding</div>
+      <div class="skill-card">Social Media Design</div>
+      <div class="skill-card">Digital Marketing</div>
+      <div class="skill-card">SEO</div>
+      <div class="skill-card">Meta Ads</div>
+      <div class="skill-card">Google Ads</div>
+      <div class="skill-card">Video Editing</div>
+      <div class="skill-card">Motion Graphics</div>
     </div>
 
   </section>
 
   <!-- CONTACT SECTION -->
-
   <section class="contact" id="contact">
 
-    <div class="section-label">03 / GET IN TOUCH</div>
-
-    <h2>
-      LET'S CREATE<br>
-      SOMETHING GREAT.
-    </h2>
+    <h2 class="section-title">LET'S CREATE <span>TOGETHER.</span></h2>
 
     <p>
-      Have an idea or a project in mind? Let's connect and create
-      something meaningful together.
+      Have an idea, a project or just want to say hello?
+      Let's make something creative.
     </p>
 
-    <p style="margin-top: 25px;">
-      Email:
-      <a href="mailto:YOUR_EMAIL@example.com">
-        YOUR_EMAIL@example.com
-      </a>
-    </p>
+    <a
+      href="mailto:YOUR_EMAIL@example.com"
+      class="contact-button"
+    >
+      GET IN TOUCH
+    </a>
 
   </section>
 
-  <!-- FOOTER -->
-
   <footer>
-    © 2026 ZIA. ALL RIGHTS RESERVED.
+    © 2026 ZIA. All Rights Reserved.
   </footer>
 
-  <!-- MOUSE FOLLOW INTERACTION -->
-
+  <!-- MOUSE FOLLOW EFFECT -->
   <script>
-
+    const character = document.getElementById("character");
     const hero = document.querySelector(".hero");
-    const character = document.getElementById("characterWrap");
 
-    let targetX = 0;
-    let targetY = 0;
-
+    let mouseX = 0;
+    let mouseY = 0;
     let currentX = 0;
     let currentY = 0;
 
-    // MOUSE MOVEMENT
-
     hero.addEventListener("mousemove", (event) => {
-
       const rect = hero.getBoundingClientRect();
 
-      const mouseX =
-        (event.clientX - rect.left) / rect.width;
-
-      const mouseY =
-        (event.clientY - rect.top) / rect.height;
-
-      // Subtle movement range
-
-      targetX = (mouseX - 0.5) * 24;
-      targetY = (mouseY - 0.5) * 14;
-
+      mouseX = ((event.clientX - rect.left) / rect.width - 0.5) * 18;
+      mouseY = ((event.clientY - rect.top) / rect.height - 0.5) * 18;
     });
-
-    // RETURN TO CENTRE WHEN MOUSE LEAVES
 
     hero.addEventListener("mouseleave", () => {
-
-      targetX = 0;
-      targetY = 0;
-
+      mouseX = 0;
+      mouseY = 0;
     });
 
-    // TOUCH MOVEMENT FOR MOBILE
+    function followMouse() {
+      currentX += (mouseX - currentX) * 0.06;
+      currentY += (mouseY - currentY) * 0.06;
 
-    hero.addEventListener("touchmove", (event) => {
+      character.style.setProperty("--mouse-x", currentX + "px");
+      character.style.setProperty("--mouse-y", currentY + "px");
 
-      const rect = hero.getBoundingClientRect();
-
-      const touchX =
-        (event.touches[0].clientX - rect.left) / rect.width;
-
-      const touchY =
-        (event.touches[0].clientY - rect.top) / rect.height;
-
-      targetX = (touchX - 0.5) * 24;
-      targetY = (touchY - 0.5) * 14;
-
-    }, { passive: true });
-
-    hero.addEventListener("touchend", () => {
-
-      targetX = 0;
-      targetY = 0;
-
-    });
-
-    // SMOOTH CHARACTER MOVEMENT
-
-    function moveCharacter() {
-
-      currentX += (targetX - currentX) * 0.07;
-      currentY += (targetY - currentY) * 0.07;
-
-      character.style.marginLeft = `${currentX}px`;
-      character.style.marginBottom = `${currentY}px`;
-
-      requestAnimationFrame(moveCharacter);
-
+      requestAnimationFrame(followMouse);
     }
 
-    // START ANIMATION
-
-    moveCharacter();
-
+    followMouse();
   </script>
 
 </body>
