@@ -2,409 +2,323 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Fathima Zia P. | Creative Portfolio</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fathima Zia | Creative Portfolio</title>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-<style>
-:root {
-  --white: #ffffff;
-  --brown: #30231d;
-  --yellow: #ffd400;
-}
+  <style>
+    :root {
+      --white: #ffffff;
+      --brown: #30231d;
+      --yellow: #ffd400;
+      --light-yellow: #fff4b8;
+    }
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  scroll-behavior: smooth;
-}
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-body {
-  background: var(--white);
-  color: var(--brown);
-  font-family: 'DM Sans', sans-serif;
-}
+    html {
+      scroll-behavior: smooth;
+    }
 
-/* FIRST SLIDE */
+    body {
+      background: var(--white);
+      color: var(--brown);
+      font-family: 'DM Sans', sans-serif;
+    }
 
-.hero {
-  min-height: 100vh;
-  background: var(--white);
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-}
+    /* FIRST SLIDE */
 
-.hero-title {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 100%;
-  text-align: center;
-  color: var(--yellow);
-  font-family: 'Space Grotesk', sans-serif;
-  font-size: clamp(48px, 10vw, 150px);
-  font-weight: 700;
-  letter-spacing: -7px;
-  white-space: nowrap;
-  z-index: 1;
-  line-height: 1;
-}
+    .hero {
+      min-height: 100vh;
+      width: 100%;
+      background: var(--white);
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
 
-.hero img {
-  position: absolute;
-  z-index: 2;
-  bottom: 4%;
-  left: 50%;
-  transform: translateX(-50%);
-  width: min(440px, 65vw);
-  height: 78vh;
-  object-fit: contain;
-  object-position: bottom center;
-  animation: float 2.5s ease-in-out infinite;
-}
+    .hero-title {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 100%;
+      text-align: center;
+      color: var(--yellow);
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: clamp(48px, 10vw, 150px);
+      font-weight: 900;
+      letter-spacing: -7px;
+      white-space: nowrap;
+      z-index: 1;
+      line-height: 1;
+    }
 
-@keyframes float {
-  0%, 100% {
-    transform: translate(-50%, 0) rotate(-2deg);
-  }
-  50% {
-    transform: translate(-50%, -35px) rotate(2deg);
-  }
-}
+    .hero video {
+      position: absolute;
+      z-index: 2;
+      bottom: 0;
+      left: 50%;
+      width: min(550px, 75vw);
+      height: 85vh;
+      object-fit: contain;
+      object-position: bottom center;
+      animation: float 2s ease-in-out infinite;
+    }
 
-/* SECOND SLIDE */
+    @keyframes float {
+      0%, 100% {
+        transform: translate(-50%, 0) rotate(-2deg);
+      }
 
-.intro {
-  min-height: 100vh;
-  padding: 110px 10%;
-  background: var(--white);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
+      50% {
+        transform: translate(-50%, -35px) rotate(2deg);
+      }
+    }
 
-.welcome {
-  font-size: 13px;
-  font-weight: 800;
-  letter-spacing: 3px;
-  margin-bottom: 25px;
-  text-transform: uppercase;
-}
+    /* INTRODUCTION */
 
-.name {
-  font-family: 'Space Grotesk', sans-serif;
-  font-size: clamp(48px, 8vw, 105px);
-  font-weight: 700;
-  line-height: 1;
-  letter-spacing: -5px;
-  margin-bottom: 30px;
-}
+    .intro {
+      min-height: 80vh;
+      padding: 100px 10%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      background: var(--brown);
+      color: var(--white);
+    }
 
-.name span {
-  color: var(--yellow);
-}
+    .intro-label {
+      color: var(--yellow);
+      font-size: 14px;
+      letter-spacing: 4px;
+      font-weight: 700;
+      margin-bottom: 25px;
+    }
 
-.description {
-  max-width: 700px;
-  font-size: clamp(17px, 2vw, 21px);
-  line-height: 1.8;
-  font-weight: 500;
-}
+    .intro h1 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: clamp(55px, 10vw, 120px);
+      line-height: 0.95;
+      margin-bottom: 30px;
+    }
 
-.about {
-  margin-top: 100px;
-  max-width: 850px;
-}
+    .intro h1 span {
+      color: var(--yellow);
+    }
 
-.section-label {
-  font-size: 13px;
-  font-weight: 800;
-  letter-spacing: 3px;
-  margin-bottom: 20px;
-  text-transform: uppercase;
-}
+    .intro p {
+      max-width: 650px;
+      font-size: 19px;
+      line-height: 1.8;
+      color: #e9e3df;
+    }
 
-.about h2,
-.toolkit h2 {
-  font-family: 'Space Grotesk', sans-serif;
-  font-size: clamp(36px, 5vw, 65px);
-  font-weight: 700;
-  letter-spacing: -2px;
-  margin-bottom: 22px;
-}
+    /* ABOUT */
 
-.about h2 span,
-.toolkit h2 span {
-  color: var(--yellow);
-}
+    .about {
+      padding: 110px 10%;
+      background: var(--white);
+    }
 
-.about p {
-  font-size: 17px;
-  line-height: 1.9;
-  max-width: 800px;
-}
+    .section-label {
+      color: #927300;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      margin-bottom: 20px;
+    }
 
-/* THIRD SLIDE */
+    .about h2 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: clamp(40px, 7vw, 75px);
+      margin-bottom: 30px;
+    }
 
-.toolkit {
-  min-height: 100vh;
-  padding: 110px 10%;
-  background: var(--brown);
-  color: var(--white);
-}
+    .about h2 span {
+      background: var(--yellow);
+      padding: 0 10px;
+    }
 
-.toolkit h2 {
-  margin-bottom: 15px;
-}
+    .about p {
+      max-width: 800px;
+      font-size: 18px;
+      line-height: 1.9;
+      color: #665b55;
+    }
 
-.toolkit-intro {
-  font-size: 17px;
-  line-height: 1.8;
-  max-width: 600px;
-  margin-bottom: 55px;
-  color: var(--white);
-}
+    /* SKILLS */
 
-.skill-category {
-  margin-bottom: 42px;
-}
+    .skills {
+      padding: 110px 10%;
+      background: var(--light-yellow);
+    }
 
-.skill-category h3 {
-  font-size: 20px;
-  margin-bottom: 20px;
-  color: var(--yellow);
-}
+    .skills h2 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: clamp(40px, 7vw, 75px);
+      margin-bottom: 55px;
+    }
 
-.skills {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 14px;
-}
+    .skill-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 25px;
+    }
 
-.skill {
-  border: 1px solid var(--yellow);
-  color: var(--white);
-  padding: 13px 22px;
-  border-radius: 40px;
-  font-size: 15px;
-  font-weight: 600;
-  transition: .3s ease;
-}
+    .skill-card {
+      background: var(--white);
+      padding: 35px;
+      border-radius: 12px;
+      border: 1px solid #eadfbb;
+    }
 
-.skill:hover {
-  background: var(--yellow);
-  color: var(--brown);
-  transform: translateY(-5px);
-}
+    .skill-card h3 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 24px;
+      margin-bottom: 18px;
+    }
 
-/* FOOTER */
+    .skill-card p {
+      line-height: 2;
+      color: #665b55;
+    }
 
-footer {
-  background: var(--brown);
-  color: var(--white);
-  padding: 30px 10%;
-  text-align: center;
-  font-size: 13px;
-}
+    /* FOOTER */
 
-/* MOBILE RESPONSIVE */
+    footer {
+      background: var(--brown);
+      color: var(--white);
+      text-align: center;
+      padding: 30px;
+      font-size: 14px;
+    }
 
-@media (max-width: 700px) {
-  .hero {
-    min-height: 85vh;
-  }
+    @media (max-width: 700px) {
+      .hero {
+        min-height: 85vh;
+      }
 
-  .hero-title {
-    font-size: 11vw;
-    letter-spacing: -3px;
-  }
+      .hero-title {
+        font-size: 11vw;
+        letter-spacing: -3px;
+      }
 
-  .hero img {
-    width: 85vw;
-    height: 65vh;
-  }
+      .hero video {
+        width: 95vw;
+        height: 70vh;
+      }
 
-  .intro,
-  .toolkit {
-    padding: 85px 7%;
-  }
+      .intro,
+      .about,
+      .skills {
+        padding: 75px 7%;
+      }
 
-  .name {
-    letter-spacing: -3px;
-  }
-
-  .about {
-    margin-top: 75px;
-  }
-
-  .toolkit-intro {
-    margin-bottom: 40px;
-  }
-}
-</style>
+      .skill-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-<!-- FIRST SLIDE: HERO -->
+  <!-- FIRST SLIDE -->
+  <section class="hero">
+    <div class="hero-title">LOST IN THOUGHTS</div>
 
-<section class="hero">
-  <div class="hero-title">LOST IN THOUGHTS</div>
+    <video autoplay muted loop playsinline>
+      <source src="Character_animation_of_thinking_.mp4" type="video/mp4">
+      Your browser does not support video.
+    </video>
+  </section>
 
-  <img
-    src="Grumpy%20Thinking%20Girl%20with%20Stylus.png"
-    alt="Zia's creative thinking character">
-</section>
+  <!-- INTRODUCTION -->
+  <section class="intro">
+    <div class="intro-label">HELLO, WELCOME TO MY PORTFOLIO</div>
 
-
-<!-- SECOND SLIDE: INTRODUCTION -->
-
-<section class="intro">
-
-  <div class="welcome">
-    HELLO, WELCOME TO MY PORTFOLIO
-  </div>
-
-  <h1 class="name">
-    FATHIMA <span>ZIA</span> P.
-  </h1>
-
-  <p class="description">
-    A designer lost in thoughts and a digital marketer.
-    I turn creative ideas into meaningful visual
-    experiences and digital stories.
-  </p>
-
-
-  <div class="about">
-
-    <div class="section-label">
-      A LITTLE ABOUT ME
-    </div>
-
-    <h2>
-      Creativity is my <span>language.</span>
-    </h2>
+    <h1>FATHIMA<br><span>ZIA P.</span></h1>
 
     <p>
-      I'm Fathima Zia P., a BCom graduate, graphic designer
-      and digital marketer who loves bringing ideas to life.
-      I enjoy exploring the connection between design,
-      creativity and marketing to create meaningful
-      experiences.
-
-      <br><br>
-
-      From graphic design and branding to social media
-      marketing, SEO and digital advertising, I love
-      experimenting with different creative possibilities.
-      I'm also passionate about video editing and AI
-      animation, where imagination meets technology.
-
-      <br><br>
-
-      I believe every idea has a story, and I love finding
-      creative ways to tell it.
+      A designer lost in thoughts and a digital marketer.
+      I turn creative ideas into meaningful visual experiences
+      and digital stories.
     </p>
+  </section>
 
-  </div>
+  <!-- ABOUT -->
+  <section class="about">
+    <div class="section-label">A LITTLE ABOUT ME</div>
 
-</section>
+    <h2>Creativity is my <span>language.</span></h2>
 
+    <p>
+      I am a BCom graduate with a passion for graphic design
+      and digital marketing. I enjoy creating visual identities,
+      designing engaging content, building digital strategies,
+      and exploring creative possibilities through video editing
+      and AI animation. I believe every idea has a story worth
+      telling through design.
+    </p>
+  </section>
 
-<!-- THIRD SLIDE: CREATIVE TOOLKIT -->
+  <!-- SKILLS -->
+  <section class="skills">
+    <div class="section-label">WHAT I DO</div>
 
-<section class="toolkit">
+    <h2>My Creative Toolkit</h2>
 
-  <div class="section-label">
-    WHAT I WORK WITH
-  </div>
+    <div class="skill-grid">
 
-  <h2>
-    My Creative <span>Toolkit.</span>
-  </h2>
+      <div class="skill-card">
+        <h3>Graphic Design & Branding</h3>
+        <p>
+          Photoshop · Illustrator · CorelDRAW · Canva ·
+          Brand Identity · Visual Design
+        </p>
+      </div>
 
-  <p class="toolkit-intro">
-    A collection of creative skills and digital tools
-    that help me turn ideas into experiences.
-  </p>
+      <div class="skill-card">
+        <h3>Digital Marketing</h3>
+        <p>
+          SEO · Google Ads · Meta Ads · Social Media Marketing ·
+          GA4 · Content Strategy
+        </p>
+      </div>
 
+      <div class="skill-card">
+        <h3>Video & Motion</h3>
+        <p>
+          Premiere Pro · After Effects · CapCut ·
+          Video Editing · Motion Graphics
+        </p>
+      </div>
 
-  <div class="skill-category">
+      <div class="skill-card">
+        <h3>AI & Animation</h3>
+        <p>
+          AI Animation · AI Image Generation ·
+          Creative Storytelling · 3D Visual Concepts
+        </p>
+      </div>
 
-    <h3>01 / Graphic Design & Branding</h3>
-
-    <div class="skills">
-      <div class="skill">Photoshop</div>
-      <div class="skill">Illustrator</div>
-      <div class="skill">CorelDRAW</div>
-      <div class="skill">Canva</div>
-      <div class="skill">Brand Identity</div>
-      <div class="skill">Visual Design</div>
     </div>
+  </section>
 
-  </div>
-
-
-  <div class="skill-category">
-
-    <h3>02 / Digital Marketing</h3>
-
-    <div class="skills">
-      <div class="skill">SEO</div>
-      <div class="skill">Google Ads</div>
-      <div class="skill">Meta Ads</div>
-      <div class="skill">Social Media Marketing</div>
-      <div class="skill">GA4</div>
-      <div class="skill">Content Strategy</div>
-    </div>
-
-  </div>
-
-
-  <div class="skill-category">
-
-    <h3>03 / Video & Motion</h3>
-
-    <div class="skills">
-      <div class="skill">Premiere Pro</div>
-      <div class="skill">After Effects</div>
-      <div class="skill">CapCut</div>
-      <div class="skill">Video Editing</div>
-      <div class="skill">Motion Graphics</div>
-    </div>
-
-  </div>
-
-
-  <div class="skill-category">
-
-    <h3>04 / AI & Animation</h3>
-
-    <div class="skills">
-      <div class="skill">AI Animation</div>
-      <div class="skill">AI Image Generation</div>
-      <div class="skill">Creative Storytelling</div>
-      <div class="skill">3D Visual Concepts</div>
-    </div>
-
-  </div>
-
-</section>
-
-
-<footer>
-  © 2026 Fathima Zia P. | Made with creativity.
-</footer>
+  <footer>
+    © 2026 Fathima Zia P. All rights reserved.
+  </footer>
 
 </body>
 </html>
