@@ -2,831 +2,483 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Fathima Zia | Creative Portfolio</title>
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
-
-<style>
-
-/* =========================
-   GLOBAL STYLING
-========================= */
-
-:root {
-    --white: #ffffff;
-    --brown: #30231d;
-    --yellow: #ffd400;
-    --light-yellow: #fff5c4;
-    --grey: #756c66;
-}
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-html {
-    scroll-behavior: smooth;
-}
-
-body {
-    font-family: 'DM Sans', sans-serif;
-    background: var(--white);
-    color: var(--brown);
-    overflow-x: hidden;
-}
-
-a {
-    text-decoration: none;
-    color: inherit;
-}
-
-/* =========================
-   NAVIGATION
-========================= */
-
-.navbar {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    padding: 25px 7%;
-
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-    z-index: 10;
-}
-
-.logo {
-    font-family: 'Space Grotesk', sans-serif;
-    font-size: 22px;
-    font-weight: 700;
-}
-
-.logo span {
-    color: #d6a900;
-}
-
-.nav-links {
-    display: flex;
-    gap: 35px;
-    list-style: none;
-    font-size: 14px;
-    font-weight: 600;
-}
-
-.nav-links a {
-    transition: color 0.3s;
-}
-
-.nav-links a:hover {
-    color: #bd9900;
-}
-
-/* =========================
-   HERO SECTION
-========================= */
-
-.hero {
-    position: relative;
-    width: 100%;
-    height: 100vh;
-    min-height: 650px;
-
-    background: var(--white);
-
-    overflow: hidden;
-    isolation: isolate;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    cursor: crosshair;
-}
-
-/* Background heading */
-
-.hero-title {
-    position: absolute;
-    top: 48%;
-    left: 50%;
-
-    transform: translate(-50%, -50%);
-
-    width: 100%;
-    text-align: center;
-
-    font-family: 'Space Grotesk', sans-serif;
-    font-size: clamp(45px, 10vw, 145px);
-    font-weight: 700;
-    letter-spacing: -7px;
-    line-height: 1;
-
-    color: var(--yellow);
-    white-space: nowrap;
-
-    z-index: 1;
-    pointer-events: none;
-}
-
-/* Character video */
-
-.hero-video-wrap {
-    position: absolute;
-
-    left: 50%;
-    bottom: 0;
-
-    width: min(600px, 85vw);
-    height: 88vh;
-
-    transform: translateX(-50%);
-
-    z-index: 2;
-    pointer-events: none;
-}
-
-.hero-video {
-    width: 100%;
-    height: 100%;
-
-    object-fit: contain;
-    object-position: center bottom;
-
-    display: block;
-}
-
-/* Video loading message */
-
-.video-message {
-    position: absolute;
-    top: 65%;
-    left: 50%;
-
-    transform: translate(-50%, -50%);
-
-    z-index: 4;
-
-    font-size: 13px;
-    color: var(--grey);
-
-    text-align: center;
-    pointer-events: none;
-}
-
-.video-message.hidden {
-    display: none;
-}
-
-/* Hero instructions */
-
-.cursor-hint {
-    position: absolute;
-    bottom: 65px;
-    left: 50%;
-
-    transform: translateX(-50%);
-
-    font-size: 12px;
-    color: var(--grey);
-
-    z-index: 3;
-    white-space: nowrap;
-    pointer-events: none;
-}
-
-.hero-label {
-    position: absolute;
-    bottom: 30px;
-    left: 50%;
-
-    transform: translateX(-50%);
-
-    font-size: 11px;
-    font-weight: 700;
-    letter-spacing: 4px;
-
-    color: var(--brown);
-
-    white-space: nowrap;
-    z-index: 3;
-    pointer-events: none;
-}
-
-/* =========================
-   INTRODUCTION
-========================= */
-
-.intro {
-    min-height: 85vh;
-    padding: 120px 10%;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-
-    background: var(--brown);
-    color: var(--white);
-}
-
-.section-label {
-    color: #d6b500;
-    font-size: 13px;
-    font-weight: 700;
-    letter-spacing: 4px;
-    margin-bottom: 25px;
-}
-
-.intro h1 {
-    font-family: 'Space Grotesk', sans-serif;
-    font-size: clamp(55px, 10vw, 125px);
-    line-height: 0.95;
-    margin-bottom: 35px;
-}
-
-.intro h1 span {
-    color: var(--yellow);
-}
-
-.intro p {
-    max-width: 700px;
-    font-size: 19px;
-    line-height: 1.9;
-    color: #e6ded9;
-}
-
-/* =========================
-   ABOUT SECTION
-========================= */
-
-.about {
-    padding: 120px 10%;
-    background: var(--white);
-}
-
-.about h2 {
-    font-family: 'Space Grotesk', sans-serif;
-    font-size: clamp(40px, 7vw, 80px);
-    margin-bottom: 35px;
-}
-
-.about h2 span {
-    background: var(--yellow);
-    padding: 0 10px;
-}
-
-.about p {
-    max-width: 850px;
-    font-size: 18px;
-    line-height: 2;
-    color: var(--grey);
-}
-
-/* =========================
-   SKILLS SECTION
-========================= */
-
-.skills {
-    padding: 110px 10%;
-    background: var(--light-yellow);
-}
-
-.skills h2 {
-    font-family: 'Space Grotesk', sans-serif;
-    font-size: clamp(40px, 7vw, 75px);
-    margin-bottom: 50px;
-}
-
-.skill-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 25px;
-}
-
-.skill-card {
-    background: var(--white);
-    padding: 40px;
-    border-radius: 15px;
-
-    transition: transform 0.3s ease,
-                box-shadow 0.3s ease;
-}
-
-.skill-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 15px 35px rgba(48,35,29,0.12);
-}
-
-.skill-card h3 {
-    font-family: 'Space Grotesk', sans-serif;
-    font-size: 25px;
-    margin-bottom: 20px;
-}
-
-.skill-card p {
-    color: var(--grey);
-    line-height: 2;
-}
-
-/* =========================
-   CONTACT SECTION
-========================= */
-
-.contact {
-    padding: 120px 10%;
-    background: var(--white);
-    text-align: center;
-}
-
-.contact h2 {
-    font-family: 'Space Grotesk', sans-serif;
-    font-size: clamp(40px, 7vw, 85px);
-    margin-bottom: 25px;
-}
-
-.contact p {
-    color: var(--grey);
-    font-size: 17px;
-    margin-bottom: 35px;
-}
-
-.contact-btn {
-    display: inline-block;
-
-    background: var(--yellow);
-    color: var(--brown);
-
-    padding: 16px 35px;
-    border-radius: 50px;
-
-    font-weight: 700;
-    transition: transform 0.3s;
-}
-
-.contact-btn:hover {
-    transform: scale(1.05);
-}
-
-/* =========================
-   FOOTER
-========================= */
-
-footer {
-    padding: 30px;
-    text-align: center;
-    background: var(--brown);
-    color: var(--white);
-    font-size: 13px;
-}
-
-/* =========================
-   MOBILE RESPONSIVE
-========================= */
-
-@media (max-width: 700px) {
-
-    .navbar {
-        padding: 20px 6%;
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zia | Creative Designer & Digital Marketer</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: #080808;
+      color: #fff;
+      font-family: Arial, Helvetica, sans-serif;
+      overflow-x: hidden;
+    }
+
+    /* NAVIGATION */
+
+    nav {
+      width: 100%;
+      padding: 28px 7%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 10;
     }
 
     .logo {
-        font-size: 19px;
+      font-size: 22px;
+      font-weight: 800;
+      letter-spacing: 2px;
     }
 
-    .nav-links {
-        gap: 15px;
-        font-size: 11px;
+    nav ul {
+      display: flex;
+      gap: 35px;
+      list-style: none;
     }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-size: 13px;
+      letter-spacing: 1px;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #c5ff3d;
+    }
+
+    /* HERO SECTION */
 
     .hero {
-        min-height: 550px;
-        height: 90vh;
+      min-height: 100vh;
+      height: 100vh;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      background: radial-gradient(
+        circle at center,
+        #202020 0%,
+        #080808 65%
+      );
     }
 
-    .hero-title {
-        font-size: 11vw;
-        letter-spacing: -3px;
+    .hero-content {
+      position: absolute;
+      z-index: 2;
+      text-align: center;
+      top: 23%;
+      width: 100%;
+      pointer-events: none;
     }
+
+    .hero-content p {
+      color: #c5ff3d;
+      font-size: 12px;
+      letter-spacing: 5px;
+      margin-bottom: 20px;
+    }
+
+    .hero-content h1 {
+      font-size: clamp(42px, 8vw, 105px);
+      font-weight: 900;
+      letter-spacing: -5px;
+      line-height: 0.95;
+    }
+
+    .hero-content h1 span {
+      color: #c5ff3d;
+    }
+
+    /* CHARACTER VIDEO */
 
     .hero-video-wrap {
-        width: 100%;
-        height: 75vh;
+      position: absolute;
+      bottom: -2%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: min(700px, 95vw);
+      height: 78vh;
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+      z-index: 1;
+      animation: float 4s ease-in-out infinite;
+      pointer-events: none;
     }
 
-    .hero-label {
-        font-size: 9px;
-        letter-spacing: 2px;
+    .hero-video {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      transform: scale(1.15);
+      transform-origin: center bottom;
+      will-change: transform;
     }
 
-    .cursor-hint {
+    /* IDLE FLOAT ANIMATION */
+
+    @keyframes float {
+      0%, 100% {
+        translate: 0 0;
+      }
+
+      50% {
+        translate: 0 -9px;
+      }
+    }
+
+    .hero-hint {
+      position: absolute;
+      bottom: 35px;
+      z-index: 3;
+      font-size: 11px;
+      letter-spacing: 2px;
+      color: #999;
+    }
+
+    /* GENERAL SECTIONS */
+
+    section:not(.hero) {
+      padding: 110px 8%;
+    }
+
+    .section-label {
+      color: #c5ff3d;
+      font-size: 12px;
+      letter-spacing: 4px;
+      margin-bottom: 20px;
+    }
+
+    section h2 {
+      font-size: clamp(35px, 6vw, 65px);
+      margin-bottom: 25px;
+    }
+
+    section p {
+      color: #aaa;
+      line-height: 1.8;
+      max-width: 700px;
+      font-size: 16px;
+    }
+
+    /* SKILLS */
+
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      margin-top: 30px;
+    }
+
+    .skills span {
+      border: 1px solid #444;
+      padding: 14px 22px;
+      border-radius: 30px;
+      color: #ddd;
+      font-size: 14px;
+      transition: 0.3s;
+    }
+
+    .skills span:hover {
+      background: #c5ff3d;
+      color: #080808;
+      border-color: #c5ff3d;
+      transform: translateY(-4px);
+    }
+
+    /* CONTACT */
+
+    .contact a {
+      color: #c5ff3d;
+      text-decoration: none;
+    }
+
+    footer {
+      padding: 30px 8%;
+      border-top: 1px solid #222;
+      color: #777;
+      font-size: 12px;
+      text-align: center;
+    }
+
+    /* MOBILE RESPONSIVE */
+
+    @media (max-width: 600px) {
+      nav {
+        padding: 22px 5%;
+      }
+
+      .logo {
+        font-size: 17px;
+      }
+
+      nav ul {
+        gap: 13px;
+      }
+
+      nav a {
         font-size: 10px;
-    }
+      }
 
-    .intro,
-    .about,
-    .skills,
-    .contact {
+      .hero-content {
+        top: 25%;
+      }
+
+      .hero-content h1 {
+        letter-spacing: -2px;
+      }
+
+      .hero-video-wrap {
+        width: 100%;
+        height: 65vh;
+      }
+
+      section:not(.hero) {
         padding: 80px 7%;
+      }
     }
-
-    .intro p,
-    .about p {
-        font-size: 16px;
-    }
-
-    .skill-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .skill-card {
-        padding: 28px;
-    }
-}
-
-@media (prefers-reduced-motion: reduce) {
-    html {
-        scroll-behavior: auto;
-    }
-
-    .skill-card,
-    .contact-btn {
-        transition: none;
-    }
-}
-
-</style>
+  </style>
 </head>
 
 <body>
 
-<!-- =========================
-     NAVIGATION
-========================= -->
+  <!-- NAVIGATION -->
 
-<nav class="navbar">
+  <nav>
+    <div class="logo">ZIA.</div>
 
-    <div class="logo">
-        ZIA<span>.</span>
-    </div>
-
-    <ul class="nav-links">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#contact">Contact</a></li>
+    <ul>
+      <li><a href="#home">HOME</a></li>
+      <li><a href="#about">ABOUT</a></li>
+      <li><a href="#skills">SKILLS</a></li>
+      <li><a href="#contact">CONTACT</a></li>
     </ul>
+  </nav>
 
-</nav>
+  <!-- HERO SECTION -->
 
+  <section class="hero" id="home">
 
-<!-- =========================
-     HERO SECTION
-========================= -->
+    <div class="hero-content">
+      <p>CREATIVE DESIGNER & DIGITAL MARKETER</p>
 
-<section class="hero" id="home">
-
-    <div class="hero-title">
-        LOST IN THOUGHTS
+      <h1>
+        LOST IN<br>
+        <span>THOUGHTS.</span>
+      </h1>
     </div>
+
+    <!-- CHARACTER VIDEO -->
 
     <div class="hero-video-wrap">
 
-        <video
-            id="thinkingVideo"
-            class="hero-video"
-            muted
-            playsinline
-            preload="auto">
-
-            <!-- EXACT FILENAME FROM YOUR GITHUB SCREENSHOT -->
-
-            <source
-                src="./thinking-character.mp4.mp4"
-                type="video/mp4">
-
-        </video>
+      <video
+        class="hero-video"
+        id="characterVideo"
+        muted
+        playsinline
+        preload="auto"
+      >
+        <source src="./z%20anim.mp4" type="video/mp4">
+        Your browser does not support HTML video.
+      </video>
 
     </div>
 
-    <div id="videoMessage" class="video-message">
-        Loading character animation...
+    <div class="hero-hint">
+      MOVE YOUR CURSOR TO INTERACT ↓
     </div>
 
-    <div class="cursor-hint">
-        MOVE YOUR CURSOR TO INTERACT
-    </div>
+  </section>
 
-    <div class="hero-label">
-        A CREATIVE MIND AT WORK
-    </div>
+  <!-- ABOUT SECTION -->
 
-</section>
+  <section id="about">
 
-
-<!-- =========================
-     INTRODUCTION
-========================= -->
-
-<section class="intro">
-
-    <div class="section-label">
-        HELLO, I'M FATHIMA ZIA
-    </div>
-
-    <h1>
-        THINK.<br>
-        <span>CREATE.</span><br>
-        INSPIRE.
-    </h1>
-
-    <p>
-        A creative-minded designer and digital marketer
-        passionate about transforming ideas into meaningful
-        visual experiences and digital stories.
-    </p>
-
-</section>
-
-
-<!-- =========================
-     ABOUT ME
-========================= -->
-
-<section class="about" id="about">
-
-    <div class="section-label">
-        A LITTLE ABOUT ME
-    </div>
+    <div class="section-label">01 / ABOUT ME</div>
 
     <h2>
-        Creativity is my <span>language.</span>
+      A LITTLE ABOUT<br>
+      MY CREATIVE WORLD.
     </h2>
 
     <p>
-        I am a BCom graduate with a passion for graphic design
-        and digital marketing. I enjoy creating visual identities,
-        designing engaging content, building digital strategies
-        and exploring creative possibilities through video editing
-        and animation.
-
-        I believe every idea has a story worth telling through design.
+      I'm a creative-minded designer and digital marketer who loves
+      turning ideas into meaningful visual experiences. From graphic
+      design and branding to digital marketing, I enjoy exploring
+      creativity and bringing concepts to life.
     </p>
 
-</section>
+  </section>
 
+  <!-- SKILLS SECTION -->
 
-<!-- =========================
-     SKILLS
-========================= -->
+  <section id="skills">
 
-<section class="skills" id="skills">
+    <div class="section-label">02 / WHAT I DO</div>
 
-    <div class="section-label">
-        WHAT I DO
+    <h2>MY CREATIVE TOOLKIT.</h2>
+
+    <div class="skills">
+      <span>Graphic Design</span>
+      <span>Branding</span>
+      <span>Social Media Design</span>
+      <span>Digital Marketing</span>
+      <span>SEO</span>
+      <span>Meta Ads</span>
+      <span>Google Ads</span>
+      <span>Video Editing</span>
+      <span>Motion Graphics</span>
     </div>
 
-    <h2>My Creative Toolkit</h2>
+  </section>
 
-    <div class="skill-grid">
+  <!-- CONTACT SECTION -->
 
-        <div class="skill-card">
-            <h3>01. Graphic Design</h3>
-            <p>
-                Photoshop · Illustrator · CorelDRAW · Canva ·
-                Brand Identity · Visual Communication
-            </p>
-        </div>
+  <section class="contact" id="contact">
 
-        <div class="skill-card">
-            <h3>02. Digital Marketing</h3>
-            <p>
-                SEO · Google Ads · Meta Ads · Social Media Marketing ·
-                GA4 · Content Strategy
-            </p>
-        </div>
+    <div class="section-label">03 / GET IN TOUCH</div>
 
-        <div class="skill-card">
-            <h3>03. Video & Motion</h3>
-            <p>
-                Premiere Pro · After Effects · CapCut ·
-                Video Editing · Motion Graphics
-            </p>
-        </div>
-
-        <div class="skill-card">
-            <h3>04. AI & Animation</h3>
-            <p>
-                AI Image Generation · AI Animation ·
-                Creative Storytelling · 3D Visual Concepts
-            </p>
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- =========================
-     CONTACT
-========================= -->
-
-<section class="contact" id="contact">
-
-    <div class="section-label">
-        LET'S CONNECT
-    </div>
-
-    <h2>Have an idea?</h2>
+    <h2>
+      LET'S CREATE<br>
+      SOMETHING GREAT.
+    </h2>
 
     <p>
-        Let's turn your next creative thought into something amazing.
+      Have an idea or a project in mind? Let's connect and create
+      something meaningful together.
     </p>
 
-    <a href="mailto:YOUR_EMAIL@example.com" class="contact-btn">
-        SAY HELLO →
-    </a>
+    <p style="margin-top: 25px;">
+      Email:
+      <a href="mailto:YOUR_EMAIL@example.com">
+        YOUR_EMAIL@example.com
+      </a>
+    </p>
 
-</section>
+  </section>
 
+  <!-- FOOTER -->
 
-<!-- =========================
-     FOOTER
-========================= -->
+  <footer>
+    © 2026 ZIA. ALL RIGHTS RESERVED.
+  </footer>
 
-<footer>
-    © 2026 Fathima Zia P. All rights reserved.
-</footer>
+  <!-- VIDEO INTERACTION -->
 
+  <script>
+    const video = document.getElementById("characterVideo");
+    const hero = document.querySelector(".hero");
 
-<!-- =========================
-     MOUSE CONTROLLED ANIMATION
-========================= -->
+    let targetTime = 0;
+    let lastInteraction = Date.now();
+    let animationFrame = null;
 
-<script>
+    // VIDEO LOADED
 
-const hero = document.getElementById("home");
-const video = document.getElementById("thinkingVideo");
-const videoMessage = document.getElementById("videoMessage");
+    video.addEventListener("loadedmetadata", () => {
+      if (video.duration && isFinite(video.duration)) {
+        targetTime = video.duration / 2;
+        video.currentTime = targetTime;
 
-let targetTime = 0;
-let isSeeking = false;
-let videoReady = false;
-let animationFrame = null;
-
-
-// VIDEO SUCCESSFULLY LOADED
-
-video.addEventListener("loadedmetadata", () => {
-
-    videoReady = true;
-    video.pause();
-
-    targetTime = video.duration / 2;
-
-    video.currentTime = targetTime;
-
-    videoMessage.classList.add("hidden");
-
-    console.log("Character video loaded!");
-    console.log("Video duration:", video.duration);
-
-});
-
-
-// VIDEO ERROR HANDLING
-
-video.addEventListener("error", () => {
-
-    videoMessage.classList.remove("hidden");
-
-    videoMessage.textContent =
-        "Video could not load. Please check the video filename.";
-
-    console.error("Video error:", video.error);
-
-});
-
-
-// CONTROL VIDEO USING MOUSE
-
-function handleMouseMovement(event) {
-
-    if (!videoReady) return;
-
-    const rect = hero.getBoundingClientRect();
-
-    // Get cursor position from 0 to 1
-
-    let mousePosition =
-        (event.clientX - rect.left) / rect.width;
-
-    mousePosition = Math.max(0, Math.min(1, mousePosition));
-
-    // Convert cursor position into video time
-
-    targetTime = mousePosition * (video.duration - 0.05);
-
-    updateVideo();
-
-}
-
-
-// UPDATE VIDEO FRAME
-
-function updateVideo() {
-
-    if (!videoReady || isSeeking || animationFrame) return;
-
-    animationFrame = requestAnimationFrame(() => {
-
-        animationFrame = null;
-
-        if (isSeeking) return;
-
-        const difference = targetTime - video.currentTime;
-
-        if (Math.abs(difference) > 0.02) {
-
-            isSeeking = true;
-
-            video.currentTime = Math.max(
-                0,
-                Math.min(video.duration - 0.01, targetTime)
-            );
-
+        if (!animationFrame) {
+          animateVideo();
         }
-
+      }
     });
 
-}
+    // CURSOR MOVEMENT
 
+    hero.addEventListener("mousemove", (event) => {
+      if (!video.duration || !isFinite(video.duration)) return;
 
-// WAIT FOR FRAME TO FINISH LOADING
+      const rect = hero.getBoundingClientRect();
 
-video.addEventListener("seeked", () => {
-
-    isSeeking = false;
-
-    // If cursor moved while seeking, update again
-
-    if (Math.abs(targetTime - video.currentTime) > 0.02) {
-
-        updateVideo();
-
-    }
-
-});
-
-
-// MOUSE MOVEMENT EVENT
-
-hero.addEventListener("pointermove", handleMouseMovement);
-
-
-// RETURN CHARACTER TO CENTRE
-
-hero.addEventListener("pointerleave", () => {
-
-    if (!videoReady) return;
-
-    targetTime = video.duration / 2;
-
-    updateVideo();
-
-});
-
-
-// MOBILE TOUCH INTERACTION
-
-hero.addEventListener("touchmove", (event) => {
-
-    if (!videoReady) return;
-
-    const touch = event.touches[0];
-
-    const rect = hero.getBoundingClientRect();
-
-    const position = Math.max(
+      const mouseX = event.clientX - rect.left;
+      const percentage = Math.max(
         0,
-        Math.min(1, (touch.clientX - rect.left) / rect.width)
-    );
+        Math.min(1, mouseX / rect.width)
+      );
 
-    targetTime = position * (video.duration - 0.05);
+      targetTime = percentage * video.duration;
+      lastInteraction = Date.now();
+    });
 
-    updateVideo();
+    // TOUCH MOVEMENT FOR MOBILE
 
-}, { passive: true });
+    hero.addEventListener("touchmove", (event) => {
+      if (!video.duration || !isFinite(video.duration)) return;
 
-</script>
+      const touchX = event.touches[0].clientX;
+      const rect = hero.getBoundingClientRect();
+
+      const percentage = Math.max(
+        0,
+        Math.min(1, (touchX - rect.left) / rect.width)
+      );
+
+      targetTime = percentage * video.duration;
+      lastInteraction = Date.now();
+
+    }, { passive: true });
+
+    // SMOOTH VIDEO SCRUBBING + IDLE MOTION
+
+    function animateVideo() {
+
+      if (video.duration && isFinite(video.duration)) {
+
+        const idleTime = Date.now() - lastInteraction;
+
+        // Gentle animation when cursor is not moving
+        if (idleTime > 1800) {
+
+          const idleMotion =
+            Math.sin(Date.now() / 900) * 0.035;
+
+          targetTime =
+            video.duration * (0.5 + idleMotion);
+        }
+
+        // Smooth transition towards target frame
+        const difference =
+          targetTime - video.currentTime;
+
+        if (
+          Math.abs(difference) > 0.04 &&
+          !video.seeking
+        ) {
+
+          const nextTime =
+            video.currentTime + difference * 0.12;
+
+          video.currentTime = Math.max(
+            0,
+            Math.min(video.duration, nextTime)
+          );
+        }
+      }
+
+      animationFrame = requestAnimationFrame(animateVideo);
+    }
+  </script>
 
 </body>
 </html>
