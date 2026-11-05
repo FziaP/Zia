@@ -2,432 +2,542 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Fathima Zia P. | Creative Portfolio</title>
+  <title>Zia | Creative Designer & Digital Marketer</title>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    html {
+      scroll-behavior: smooth;
+    }
 
-<style>
+    body {
+      background: #f8f5ed;
+      color: #493323;
+      font-family: Arial, Helvetica, sans-serif;
+      overflow-x: hidden;
+    }
 
-:root {
-  --white: #ffffff;
-  --brown: #30231d;
-  --yellow: #ffd400;
-}
+    /* NAVIGATION */
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  scroll-behavior: smooth;
-}
+    nav {
+      width: 100%;
+      padding: 28px 7%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 10;
+    }
 
-body {
-  background: var(--white);
-  color: var(--brown);
-  font-family: 'DM Sans', sans-serif;
-}
+    .logo {
+      font-size: 22px;
+      font-weight: 900;
+      letter-spacing: 2px;
+      color: #fffaf0;
+    }
 
-/* =========================
-   FIRST SLIDE - VIDEO HERO
-========================= */
+    nav ul {
+      display: flex;
+      gap: 35px;
+      list-style: none;
+    }
 
-.hero {
-  min-height: 100vh;
-  width: 100%;
-  background: var(--white);
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-}
+    nav a {
+      color: #fffaf0;
+      text-decoration: none;
+      font-size: 13px;
+      letter-spacing: 1px;
+      transition: color 0.3s;
+    }
 
-.hero-title {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 100%;
-  text-align: center;
-  color: var(--yellow);
-  font-family: 'Space Grotesk', sans-serif;
-  font-size: clamp(48px, 10vw, 150px);
-  font-weight: 900;
-  letter-spacing: -7px;
-  white-space: nowrap;
-  z-index: 1;
-  line-height: 1;
-}
+    nav a:hover {
+      color: #f5c84c;
+    }
 
-.hero video {
-  position: absolute;
-  z-index: 2;
-  bottom: 0;
-  left: 50%;
-  width: min(550px, 75vw);
-  height: 85vh;
-  object-fit: contain;
-  object-position: bottom center;
-  animation: float 2s ease-in-out infinite;
-}
+    /* HERO SECTION */
 
-@keyframes float {
-  0%, 100% {
-    transform: translate(-50%, 0) rotate(-2deg);
-  }
+    .hero {
+      min-height: 100vh;
+      height: 100vh;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
 
-  50% {
-    transform: translate(-50%, -35px) rotate(2deg);
-  }
-}
+      background:
+        radial-gradient(
+          ellipse at 50% 65%,
+          #805d3e 0%,
+          #60432f 45%,
+          #3c291f 100%
+        );
+    }
 
-/* =========================
-   SECOND SLIDE - INTRO
-========================= */
+    /* HERO TEXT - BEHIND VIDEO */
 
-.intro {
-  min-height: 100vh;
-  padding: 110px 10%;
-  background: var(--white);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
+    .hero-content {
+      position: absolute;
+      z-index: 1;
+      text-align: center;
+      top: 24%;
+      width: 100%;
+      pointer-events: none;
+    }
 
-.welcome {
-  font-size: 13px;
-  font-weight: 800;
-  letter-spacing: 3px;
-  margin-bottom: 25px;
-  text-transform: uppercase;
-}
+    .hero-content p {
+      color: #f5d98a;
+      font-size: 12px;
+      letter-spacing: 5px;
+      margin-bottom: 20px;
+    }
 
-.name {
-  font-family: 'Space Grotesk', sans-serif;
-  font-size: clamp(48px, 8vw, 105px);
-  font-weight: 700;
-  line-height: 1;
-  letter-spacing: -5px;
-  margin-bottom: 30px;
-}
+    .hero-content h1 {
+      font-size: clamp(48px, 9vw, 115px);
+      font-weight: 900;
+      letter-spacing: -5px;
+      line-height: 0.95;
+      color: #fffaf0;
+    }
 
-.name span {
-  color: var(--yellow);
-}
+    .hero-content h1 span {
+      color: #f5c84c;
+    }
 
-.description {
-  max-width: 700px;
-  font-size: clamp(17px, 2vw, 21px);
-  line-height: 1.8;
-  font-weight: 500;
-}
+    /* CHARACTER VIDEO - IN FRONT OF TEXT */
 
-/* ABOUT ME */
+    .hero-video-wrap {
+      position: absolute;
+      bottom: -2%;
+      left: 50%;
+      transform: translateX(-50%);
 
-.about {
-  margin-top: 100px;
-  max-width: 850px;
-}
+      width: min(750px, 95vw);
+      height: 82vh;
 
-.section-label {
-  font-size: 13px;
-  font-weight: 800;
-  letter-spacing: 3px;
-  margin-bottom: 20px;
-  text-transform: uppercase;
-}
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
 
-.about h2,
-.toolkit h2 {
-  font-family: 'Space Grotesk', sans-serif;
-  font-size: clamp(36px, 5vw, 65px);
-  font-weight: 700;
-  letter-spacing: -2px;
-  margin-bottom: 22px;
-}
+      z-index: 2;
+      animation: float 4s ease-in-out infinite;
+      pointer-events: none;
+    }
 
-.about h2 span,
-.toolkit h2 span {
-  color: var(--yellow);
-}
+    .hero-video {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
 
-.about p {
-  font-size: 17px;
-  line-height: 1.9;
-  max-width: 800px;
-}
+      transform: scale(1.15);
+      transform-origin: center bottom;
 
-/* =========================
-   THIRD SLIDE - TOOLKIT
-========================= */
+      will-change: transform;
+    }
 
-.toolkit {
-  min-height: 100vh;
-  padding: 110px 10%;
-  background: var(--brown);
-  color: var(--white);
-}
+    /* FLOATING ANIMATION */
 
-.toolkit h2 {
-  margin-bottom: 15px;
-}
+    @keyframes float {
+      0%, 100% {
+        translate: 0 0;
+      }
 
-.toolkit-intro {
-  font-size: 17px;
-  line-height: 1.8;
-  max-width: 600px;
-  margin-bottom: 55px;
-}
+      50% {
+        translate: 0 -9px;
+      }
+    }
 
-.skill-category {
-  margin-bottom: 42px;
-}
+    .hero-hint {
+      position: absolute;
+      bottom: 35px;
+      z-index: 3;
 
-.skill-category h3 {
-  font-size: 20px;
-  margin-bottom: 20px;
-  color: var(--yellow);
-}
+      font-size: 11px;
+      letter-spacing: 2px;
+      color: #f5e8c9;
+    }
 
-.skills {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 14px;
-}
+    /* GENERAL SECTIONS */
 
-.skill {
-  border: 1px solid var(--yellow);
-  color: var(--white);
-  padding: 13px 22px;
-  border-radius: 40px;
-  font-size: 15px;
-  font-weight: 600;
-  transition: .3s ease;
-}
+    section:not(.hero) {
+      padding: 110px 8%;
+      background: #f8f5ed;
+    }
 
-.skill:hover {
-  background: var(--yellow);
-  color: var(--brown);
-  transform: translateY(-5px);
-}
+    .section-label {
+      color: #b78a35;
+      font-size: 12px;
+      letter-spacing: 4px;
+      margin-bottom: 20px;
+      font-weight: 700;
+    }
 
-/* =========================
-   FOOTER
-========================= */
+    section h2 {
+      font-size: clamp(35px, 6vw, 65px);
+      margin-bottom: 25px;
+      color: #493323;
+      line-height: 1.05;
+    }
 
-footer {
-  background: var(--brown);
-  color: var(--white);
-  padding: 30px 10%;
-  text-align: center;
-  font-size: 13px;
-}
+    section p {
+      color: #79634e;
+      line-height: 1.8;
+      max-width: 700px;
+      font-size: 16px;
+    }
 
-/* =========================
-   MOBILE RESPONSIVE
-========================= */
+    /* SKILLS */
 
-@media (max-width: 700px) {
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      margin-top: 30px;
+    }
 
-  .hero {
-    min-height: 85vh;
-  }
+    .skills span {
+      border: 1px solid #c9b99f;
+      background: #fffdf7;
+      padding: 14px 22px;
+      border-radius: 30px;
+      color: #60432f;
+      font-size: 14px;
+      transition: 0.3s;
+    }
 
-  .hero-title {
-    font-size: 11vw;
-    letter-spacing: -3px;
-  }
+    .skills span:hover {
+      background: #f5c84c;
+      color: #493323;
+      border-color: #f5c84c;
+      transform: translateY(-4px);
+    }
 
-  .hero video {
-    width: 95vw;
-    height: 70vh;
-  }
+    /* CONTACT */
 
-  .intro,
-  .toolkit {
-    padding: 85px 7%;
-  }
+    .contact {
+      background: #efe6d6 !important;
+    }
 
-  .name {
-    letter-spacing: -3px;
-  }
+    .contact a {
+      color: #a87519;
+      text-decoration: none;
+      font-weight: 700;
+    }
 
-  .about {
-    margin-top: 75px;
-  }
+    .contact a:hover {
+      color: #60432f;
+    }
 
-  .toolkit-intro {
-    margin-bottom: 40px;
-  }
+    /* FOOTER */
 
-}
+    footer {
+      padding: 30px 8%;
+      background: #3c291f;
+      color: #f5e8c9;
+      font-size: 12px;
+      text-align: center;
+    }
 
-</style>
+    /* MOBILE RESPONSIVE */
+
+    @media (max-width: 600px) {
+
+      nav {
+        padding: 22px 5%;
+      }
+
+      .logo {
+        font-size: 17px;
+      }
+
+      nav ul {
+        gap: 13px;
+      }
+
+      nav a {
+        font-size: 10px;
+      }
+
+      .hero-content {
+        top: 27%;
+      }
+
+      .hero-content h1 {
+        letter-spacing: -2px;
+      }
+
+      .hero-content p {
+        font-size: 9px;
+        letter-spacing: 3px;
+      }
+
+      .hero-video-wrap {
+        width: 100%;
+        height: 68vh;
+      }
+
+      section:not(.hero) {
+        padding: 80px 7%;
+      }
+
+      .hero-hint {
+        font-size: 9px;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-<!-- FIRST SLIDE: VIDEO HERO -->
+  <!-- NAVIGATION -->
 
-<section class="hero">
+  <nav>
+    <div class="logo">ZIA.</div>
 
-  <div class="hero-title">
-    LOST IN THOUGHTS
-  </div>
+    <ul>
+      <li><a href="#home">HOME</a></li>
+      <li><a href="#about">ABOUT</a></li>
+      <li><a href="#skills">SKILLS</a></li>
+      <li><a href="#contact">CONTACT</a></li>
+    </ul>
+  </nav>
 
-  <video autoplay muted loop playsinline>
-    <source src="zia-character.mp4" type="video/mp4">
-    Your browser does not support video.
-  </video>
+  <!-- HERO SECTION -->
 
-</section>
+  <section class="hero" id="home">
 
+    <!-- TEXT BEHIND CHARACTER -->
 
-<!-- SECOND SLIDE: INTRODUCTION -->
+    <div class="hero-content">
 
-<section class="intro">
+      <p>CREATIVE DESIGNER & DIGITAL MARKETER</p>
 
-  <div class="welcome">
-    HELLO, WELCOME TO MY PORTFOLIO
-  </div>
+      <h1>
+        LOST IN<br>
+        <span>THOUGHTS.</span>
+      </h1>
 
-  <h1 class="name">
-    FATHIMA <span>ZIA</span> P.
-  </h1>
-
-  <p class="description">
-    A designer lost in thoughts and a digital marketer.
-    I turn creative ideas into meaningful visual
-    experiences and digital stories.
-  </p>
-
-
-  <div class="about">
-
-    <div class="section-label">
-      A LITTLE ABOUT ME
     </div>
 
+    <!-- CHARACTER VIDEO IN FRONT -->
+
+    <div class="hero-video-wrap">
+
+      <video
+        class="hero-video"
+        id="characterVideo"
+        muted
+        playsinline
+        preload="auto"
+      >
+        <source src="./z%20anim.mp4" type="video/mp4">
+        Your browser does not support HTML video.
+      </video>
+
+    </div>
+
+    <div class="hero-hint">
+      MOVE YOUR CURSOR TO INTERACT ↓
+    </div>
+
+  </section>
+
+  <!-- ABOUT SECTION -->
+
+  <section id="about">
+
+    <div class="section-label">01 / ABOUT ME</div>
+
     <h2>
-      Creativity is my <span>language.</span>
+      A LITTLE ABOUT<br>
+      MY CREATIVE WORLD.
     </h2>
 
     <p>
-      I'm Fathima Zia P., a BCom graduate, graphic designer
-      and digital marketer who loves bringing ideas to life.
-      I enjoy exploring the connection between design,
-      creativity and marketing to create meaningful
-      experiences.
-
-      <br><br>
-
-      From graphic design and branding to social media
-      marketing, SEO and digital advertising, I love
-      experimenting with different creative possibilities.
-      I'm also passionate about video editing and AI
-      animation, where imagination meets technology.
-
-      <br><br>
-
-      I believe every idea has a story, and I love finding
-      creative ways to tell it.
+      I'm a creative-minded designer and digital marketer who loves
+      turning ideas into meaningful visual experiences. From graphic
+      design and branding to digital marketing, I enjoy exploring
+      creativity and bringing concepts to life.
     </p>
 
-  </div>
+  </section>
 
-</section>
+  <!-- SKILLS SECTION -->
 
+  <section id="skills">
 
-<!-- THIRD SLIDE: CREATIVE TOOLKIT -->
+    <div class="section-label">02 / WHAT I DO</div>
 
-<section class="toolkit">
-
-  <div class="section-label">
-    WHAT I WORK WITH
-  </div>
-
-  <h2>
-    My Creative <span>Toolkit.</span>
-  </h2>
-
-  <p class="toolkit-intro">
-    A collection of creative skills and digital tools
-    that help me turn ideas into experiences.
-  </p>
-
-
-  <div class="skill-category">
-
-    <h3>01 / Graphic Design & Branding</h3>
+    <h2>MY CREATIVE TOOLKIT.</h2>
 
     <div class="skills">
-      <div class="skill">Photoshop</div>
-      <div class="skill">Illustrator</div>
-      <div class="skill">CorelDRAW</div>
-      <div class="skill">Canva</div>
-      <div class="skill">Brand Identity</div>
-      <div class="skill">Visual Design</div>
+      <span>Graphic Design</span>
+      <span>Branding</span>
+      <span>Social Media Design</span>
+      <span>Digital Marketing</span>
+      <span>SEO</span>
+      <span>Meta Ads</span>
+      <span>Google Ads</span>
+      <span>Video Editing</span>
+      <span>Motion Graphics</span>
     </div>
 
-  </div>
+  </section>
 
+  <!-- CONTACT SECTION -->
 
-  <div class="skill-category">
+  <section class="contact" id="contact">
 
-    <h3>02 / Digital Marketing</h3>
+    <div class="section-label">03 / GET IN TOUCH</div>
 
-    <div class="skills">
-      <div class="skill">SEO</div>
-      <div class="skill">Google Ads</div>
-      <div class="skill">Meta Ads</div>
-      <div class="skill">Social Media Marketing</div>
-      <div class="skill">GA4</div>
-      <div class="skill">Content Strategy</div>
-    </div>
+    <h2>
+      LET'S CREATE<br>
+      SOMETHING GREAT.
+    </h2>
 
-  </div>
+    <p>
+      Have an idea or a project in mind? Let's connect and create
+      something meaningful together.
+    </p>
 
+    <p style="margin-top: 25px;">
+      Email:
+      <a href="mailto:YOUR_EMAIL@example.com">
+        YOUR_EMAIL@example.com
+      </a>
+    </p>
 
-  <div class="skill-category">
+  </section>
 
-    <h3>03 / Video & Motion</h3>
+  <!-- FOOTER -->
 
-    <div class="skills">
-      <div class="skill">Premiere Pro</div>
-      <div class="skill">After Effects</div>
-      <div class="skill">CapCut</div>
-      <div class="skill">Video Editing</div>
-      <div class="skill">Motion Graphics</div>
-    </div>
+  <footer>
+    © 2026 ZIA. ALL RIGHTS RESERVED.
+  </footer>
 
-  </div>
+  <!-- VIDEO INTERACTION -->
 
+  <script>
 
-  <div class="skill-category">
+    const video = document.getElementById("characterVideo");
+    const hero = document.querySelector(".hero");
 
-    <h3>04 / AI & Animation</h3>
+    let targetTime = 0;
+    let lastInteraction = Date.now();
+    let animationFrame = null;
 
-    <div class="skills">
-      <div class="skill">AI Animation</div>
-      <div class="skill">AI Image Generation</div>
-      <div class="skill">Creative Storytelling</div>
-      <div class="skill">3D Visual Concepts</div>
-    </div>
+    // VIDEO LOADED
 
-  </div>
+    video.addEventListener("loadedmetadata", () => {
 
-</section>
+      if (video.duration && isFinite(video.duration)) {
 
+        targetTime = video.duration / 2;
+        video.currentTime = targetTime;
 
-<footer>
-  © 2026 Fathima Zia P. | Made with creativity.
-</footer>
+        if (!animationFrame) {
+          animateVideo();
+        }
+      }
+
+    });
+
+    // CURSOR MOVEMENT
+
+    hero.addEventListener("mousemove", (event) => {
+
+      if (!video.duration || !isFinite(video.duration)) return;
+
+      const rect = hero.getBoundingClientRect();
+
+      const mouseX = event.clientX - rect.left;
+
+      const percentage = Math.max(
+        0,
+        Math.min(1, mouseX / rect.width)
+      );
+
+      targetTime = percentage * video.duration;
+      lastInteraction = Date.now();
+
+    });
+
+    // TOUCH MOVEMENT FOR MOBILE
+
+    hero.addEventListener("touchmove", (event) => {
+
+      if (!video.duration || !isFinite(video.duration)) return;
+
+      const touchX = event.touches[0].clientX;
+      const rect = hero.getBoundingClientRect();
+
+      const percentage = Math.max(
+        0,
+        Math.min(1, (touchX - rect.left) / rect.width)
+      );
+
+      targetTime = percentage * video.duration;
+      lastInteraction = Date.now();
+
+    }, { passive: true });
+
+    // SMOOTH VIDEO SCRUBBING + IDLE MOVEMENT
+
+    function animateVideo() {
+
+      if (video.duration && isFinite(video.duration)) {
+
+        const idleTime = Date.now() - lastInteraction;
+
+        // Gentle idle animation
+
+        if (idleTime > 1800) {
+
+          const idleMotion =
+            Math.sin(Date.now() / 900) * 0.035;
+
+          targetTime =
+            video.duration * (0.5 + idleMotion);
+
+        }
+
+        // Smooth frame transition
+
+        const difference =
+          targetTime - video.currentTime;
+
+        if (
+          Math.abs(difference) > 0.04 &&
+          !video.seeking
+        ) {
+
+          const nextTime =
+            video.currentTime + difference * 0.12;
+
+          video.currentTime = Math.max(
+            0,
+            Math.min(video.duration, nextTime)
+          );
+
+        }
+
+      }
+
+      animationFrame = requestAnimationFrame(animateVideo);
+
+    }
+
+  </script>
 
 </body>
 </html>
