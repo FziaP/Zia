@@ -123,8 +123,9 @@
       top: 50%;
       width: min(390px, 42vw);
       transform: translate(-50%, -50%);
+      translate: var(--mouse-x, 0px) var(--mouse-y, 0px);
       animation: floatCharacter 2s ease-in-out infinite;
-      will-change: transform;
+      will-change: transform, translate;
       pointer-events: none;
     }
 
@@ -348,10 +349,10 @@
         <span class="thoughts">THOUGHTS</span>
       </div>
 
-      <!-- Replace the filename below with your exact image filename -->
+      <!-- YOUR CHARACTER IMAGE -->
       <div class="character-container" id="character">
         <img
-          src="thinking-character.png"
+          src="Character_animation_of_thinking_.png"
           alt="Thinking character illustration"
         >
       </div>
