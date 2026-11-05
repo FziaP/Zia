@@ -1,558 +1,826 @@
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Fathima Zia | Creative Portfolio</title>
+<title>Fathima Zia | Creative Designer</title>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-  <style>
+<style>
 
-    :root {
-      --white: #ffffff;
-      --brown: #30231d;
-      --yellow: #ffd400;
-      --light-yellow: #fff4b8;
+/* =========================
+   GLOBAL STYLING
+========================= */
+
+:root {
+    --white: #ffffff;
+    --brown: #30231d;
+    --yellow: #ffd400;
+    --light-yellow: #fff5c4;
+    --grey: #756c66;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--white);
+    color: var(--brown);
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* =========================
+   NAVIGATION
+========================= */
+
+.navbar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 25px 7%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    z-index: 10;
+}
+
+.logo {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 22px;
+    font-weight: 700;
+}
+
+.logo span {
+    color: #d6a900;
+}
+
+.nav-links {
+    display: flex;
+    gap: 35px;
+    list-style: none;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.nav-links a {
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: #bd9900;
+}
+
+/* =========================
+   HERO SECTION
+========================= */
+
+.hero {
+    position: relative;
+
+    width: 100%;
+    height: 100vh;
+    min-height: 650px;
+
+    background: var(--white);
+
+    overflow: hidden;
+    isolation: isolate;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    cursor: crosshair;
+}
+
+/* Background heading */
+
+.hero-title {
+    position: absolute;
+
+    top: 48%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+
+    width: 100%;
+    text-align: center;
+
+    font-family: 'Space Grotesk', sans-serif;
+
+    font-size: clamp(45px, 10vw, 145px);
+    font-weight: 700;
+
+    letter-spacing: -7px;
+    line-height: 1;
+
+    color: var(--yellow);
+
+    white-space: nowrap;
+
+    z-index: 1;
+    pointer-events: none;
+}
+
+/* Character video */
+
+.hero-video-wrap {
+    position: absolute;
+
+    left: 50%;
+    bottom: 0;
+
+    width: min(600px, 85vw);
+    height: 88vh;
+
+    transform: translateX(-50%);
+
+    z-index: 2;
+
+    pointer-events: none;
+}
+
+.hero-video {
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+    object-position: center bottom;
+
+    display: block;
+}
+
+/* Hero bottom text */
+
+.hero-label {
+    position: absolute;
+
+    bottom: 30px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    font-size: 11px;
+    font-weight: 700;
+
+    letter-spacing: 4px;
+
+    color: var(--brown);
+
+    white-space: nowrap;
+    z-index: 3;
+    pointer-events: none;
+}
+
+/* Cursor hint */
+
+.cursor-hint {
+    position: absolute;
+    bottom: 65px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    font-size: 12px;
+    color: var(--grey);
+
+    z-index: 3;
+    pointer-events: none;
+}
+
+/* =========================
+   INTRODUCTION
+========================= */
+
+.intro {
+    min-height: 85vh;
+
+    padding: 120px 10%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    background: var(--brown);
+    color: var(--white);
+}
+
+.section-label {
+    color: #d6b500;
+
+    font-size: 13px;
+    font-weight: 700;
+
+    letter-spacing: 4px;
+
+    margin-bottom: 25px;
+}
+
+.intro h1 {
+    font-family: 'Space Grotesk', sans-serif;
+
+    font-size: clamp(55px, 10vw, 125px);
+    line-height: 0.95;
+
+    margin-bottom: 35px;
+}
+
+.intro h1 span {
+    color: var(--yellow);
+}
+
+.intro p {
+    max-width: 700px;
+
+    font-size: 19px;
+    line-height: 1.9;
+
+    color: #e6ded9;
+}
+
+/* =========================
+   ABOUT SECTION
+========================= */
+
+.about {
+    padding: 120px 10%;
+    background: var(--white);
+}
+
+.about h2 {
+    font-family: 'Space Grotesk', sans-serif;
+
+    font-size: clamp(40px, 7vw, 80px);
+
+    margin-bottom: 35px;
+}
+
+.about h2 span {
+    background: var(--yellow);
+    padding: 0 10px;
+}
+
+.about p {
+    max-width: 850px;
+
+    font-size: 18px;
+    line-height: 2;
+
+    color: var(--grey);
+}
+
+/* =========================
+   SKILLS SECTION
+========================= */
+
+.skills {
+    padding: 110px 10%;
+    background: var(--light-yellow);
+}
+
+.skills h2 {
+    font-family: 'Space Grotesk', sans-serif;
+
+    font-size: clamp(40px, 7vw, 75px);
+
+    margin-bottom: 50px;
+}
+
+.skill-grid {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 25px;
+}
+
+.skill-card {
+    background: var(--white);
+
+    padding: 40px;
+
+    border-radius: 15px;
+
+    transition: transform 0.3s ease,
+                box-shadow 0.3s ease;
+}
+
+.skill-card:hover {
+    transform: translateY(-10px);
+
+    box-shadow: 0 15px 35px rgba(48,35,29,0.12);
+}
+
+.skill-card h3 {
+    font-family: 'Space Grotesk', sans-serif;
+
+    font-size: 25px;
+
+    margin-bottom: 20px;
+}
+
+.skill-card p {
+    color: var(--grey);
+    line-height: 2;
+}
+
+/* =========================
+   CONTACT SECTION
+========================= */
+
+.contact {
+    padding: 120px 10%;
+
+    background: var(--white);
+    text-align: center;
+}
+
+.contact h2 {
+    font-family: 'Space Grotesk', sans-serif;
+
+    font-size: clamp(40px, 7vw, 85px);
+
+    margin-bottom: 25px;
+}
+
+.contact p {
+    color: var(--grey);
+    font-size: 17px;
+
+    margin-bottom: 35px;
+}
+
+.contact-btn {
+    display: inline-block;
+
+    background: var(--yellow);
+    color: var(--brown);
+
+    padding: 16px 35px;
+
+    border-radius: 50px;
+
+    font-weight: 700;
+
+    transition: transform 0.3s;
+}
+
+.contact-btn:hover {
+    transform: scale(1.05);
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    padding: 30px;
+
+    text-align: center;
+
+    background: var(--brown);
+    color: var(--white);
+
+    font-size: 13px;
+}
+
+/* =========================
+   RESPONSIVE DESIGN
+========================= */
+
+@media (max-width: 700px) {
+
+    .navbar {
+        padding: 20px 6%;
     }
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
+    .logo {
+        font-size: 19px;
     }
 
-    html {
-      scroll-behavior: smooth;
+    .nav-links {
+        gap: 15px;
+        font-size: 11px;
     }
-
-    body {
-      background: var(--white);
-      color: var(--brown);
-      font-family: 'DM Sans', sans-serif;
-      overflow-x: hidden;
-    }
-
-    /* =========================
-       HERO SECTION
-    ========================= */
 
     .hero {
-      position: relative;
-      width: 100%;
-      height: 100vh;
-      min-height: 650px;
-      background: var(--white);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      overflow: hidden;
-      isolation: isolate;
+        min-height: 550px;
+        height: 90vh;
     }
 
     .hero-title {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-
-      width: 100%;
-      text-align: center;
-
-      color: var(--yellow);
-      font-family: 'Space Grotesk', sans-serif;
-
-      font-size: clamp(45px, 10vw, 150px);
-      font-weight: 700;
-      letter-spacing: -7px;
-
-      white-space: nowrap;
-      line-height: 1;
-
-      z-index: 1;
-      pointer-events: none;
+        font-size: 11vw;
+        letter-spacing: -3px;
     }
-
-    /* VIDEO WRAPPER */
 
     .hero-video-wrap {
-      position: absolute;
-      bottom: 0;
-      left: 50%;
-
-      width: min(550px, 75vw);
-      height: 88vh;
-
-      z-index: 2;
-
-      transform: translateX(-50%);
-      transition: transform 0.3s ease-out;
-
-      will-change: transform;
-      pointer-events: none;
+        width: 100%;
+        height: 75vh;
     }
-
-    .hero-video {
-      width: 100%;
-      height: 100%;
-
-      object-fit: contain;
-      object-position: bottom center;
-
-      animation: float 3s ease-in-out infinite;
-      display: block;
-    }
-
-    /* FLOATING ANIMATION */
-
-    @keyframes float {
-      0%, 100% {
-        transform: translateY(0) rotate(-1deg);
-      }
-
-      50% {
-        transform: translateY(-25px) rotate(1deg);
-      }
-    }
-
-    /* SMALL LABEL */
 
     .hero-label {
-      position: absolute;
-      bottom: 35px;
-      left: 50%;
-      transform: translateX(-50%);
-
-      z-index: 3;
-
-      font-size: 12px;
-      font-weight: 700;
-      letter-spacing: 4px;
-
-      color: var(--brown);
-      white-space: nowrap;
+        font-size: 9px;
+        letter-spacing: 2px;
     }
 
-    /* =========================
-       INTRODUCTION
-    ========================= */
-
-    .intro {
-      min-height: 80vh;
-      padding: 100px 10%;
-
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-
-      background: var(--brown);
-      color: var(--white);
+    .cursor-hint {
+        font-size: 10px;
     }
 
-    .intro-label {
-      color: var(--yellow);
-      font-size: 14px;
-      letter-spacing: 4px;
-      font-weight: 700;
-      margin-bottom: 25px;
+    .intro,
+    .about,
+    .skills,
+    .contact {
+        padding: 80px 7%;
     }
 
-    .intro h1 {
-      font-family: 'Space Grotesk', sans-serif;
-      font-size: clamp(55px, 10vw, 120px);
-      line-height: 0.95;
-      margin-bottom: 30px;
-    }
-
-    .intro h1 span {
-      color: var(--yellow);
-    }
-
-    .intro p {
-      max-width: 650px;
-      font-size: 19px;
-      line-height: 1.8;
-      color: #e9e3df;
-    }
-
-    /* =========================
-       ABOUT SECTION
-    ========================= */
-
-    .about {
-      padding: 110px 10%;
-      background: var(--white);
-    }
-
-    .section-label {
-      color: #927300;
-      font-size: 13px;
-      font-weight: 700;
-      letter-spacing: 3px;
-      margin-bottom: 20px;
-    }
-
-    .about h2 {
-      font-family: 'Space Grotesk', sans-serif;
-      font-size: clamp(40px, 7vw, 75px);
-      margin-bottom: 30px;
-    }
-
-    .about h2 span {
-      background: var(--yellow);
-      padding: 0 10px;
-    }
-
+    .intro p,
     .about p {
-      max-width: 800px;
-      font-size: 18px;
-      line-height: 1.9;
-      color: #665b55;
-    }
-
-    /* =========================
-       SKILLS SECTION
-    ========================= */
-
-    .skills {
-      padding: 110px 10%;
-      background: var(--light-yellow);
-    }
-
-    .skills h2 {
-      font-family: 'Space Grotesk', sans-serif;
-      font-size: clamp(40px, 7vw, 75px);
-      margin-bottom: 55px;
+        font-size: 16px;
     }
 
     .skill-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 25px;
+        grid-template-columns: 1fr;
     }
 
     .skill-card {
-      background: var(--white);
-      padding: 35px;
-      border-radius: 12px;
-      border: 1px solid #eadfbb;
-
-      transition: transform 0.3s ease,
-                  box-shadow 0.3s ease;
+        padding: 28px;
     }
 
-    .skill-card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 15px 35px rgba(48, 35, 29, 0.12);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
     }
 
-    .skill-card h3 {
-      font-family: 'Space Grotesk', sans-serif;
-      font-size: 24px;
-      margin-bottom: 18px;
-    }
-
-    .skill-card p {
-      line-height: 2;
-      color: #665b55;
-    }
-
-    /* =========================
-       FOOTER
-    ========================= */
-
-    footer {
-      background: var(--brown);
-      color: var(--white);
-      text-align: center;
-      padding: 30px;
-      font-size: 14px;
-    }
-
-    /* =========================
-       MOBILE RESPONSIVE
-    ========================= */
-
-    @media (max-width: 700px) {
-
-      .hero {
-        height: 90vh;
-        min-height: 550px;
-      }
-
-      .hero-title {
-        font-size: 11vw;
-        letter-spacing: -3px;
-      }
-
-      .hero-video-wrap {
-        width: 95vw;
-        height: 72vh;
-      }
-
-      .hero-label {
-        font-size: 10px;
-        letter-spacing: 2px;
-      }
-
-      .intro,
-      .about,
-      .skills {
-        padding: 75px 7%;
-      }
-
-      .intro p,
-      .about p {
-        font-size: 16px;
-      }
-
-      .skill-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .skill-card {
-        padding: 25px;
-      }
-    }
-
-    /* REDUCED MOTION */
-
-    @media (prefers-reduced-motion: reduce) {
-      .hero-video {
-        animation: none;
-      }
-
-      .skill-card {
+    .skill-card,
+    .contact-btn {
         transition: none;
-      }
     }
+}
 
-  </style>
+</style>
 </head>
 
 <body>
 
-  <!-- =========================
-       FIRST SLIDE / HERO
-  ========================= -->
+<!-- =========================
+     NAVIGATION
+========================= -->
 
-  <section class="hero" id="home">
+<nav class="navbar">
 
-    <div class="hero-title">
-      LOST IN THOUGHTS
+    <div class="logo">
+        ZIA<span>.</span>
     </div>
 
-    <div class="hero-video-wrap" id="character">
+    <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
 
-      <video
-        class="hero-video"
-        autoplay
-        muted
-        loop
-        playsinline
-        preload="auto">
+</nav>
 
-        <source
-          src="./thinking-character.mp4"
-          type="video/mp4">
 
-        Your browser does not support video.
+<!-- =========================
+     HERO SECTION
+========================= -->
 
-      </video>
+<section class="hero" id="home">
 
+    <div class="hero-title">
+        LOST IN THOUGHTS
+    </div>
+
+    <div class="hero-video-wrap">
+
+        <video
+            id="thinkingVideo"
+            class="hero-video"
+            muted
+            playsinline
+            preload="auto">
+
+            <source
+                src="./thinking-character.mp4"
+                type="video/mp4">
+
+            Your browser does not support video.
+
+        </video>
+
+    </div>
+
+    <div class="cursor-hint">
+        MOVE YOUR CURSOR TO INTERACT
     </div>
 
     <div class="hero-label">
-      A CREATIVE MIND AT WORK
+        A CREATIVE MIND AT WORK
     </div>
 
-  </section>
+</section>
 
 
-  <!-- =========================
-       INTRODUCTION
-  ========================= -->
+<!-- =========================
+     INTRODUCTION
+========================= -->
 
-  <section class="intro">
+<section class="intro">
 
-    <div class="intro-label">
-      HELLO, WELCOME TO MY PORTFOLIO
+    <div class="section-label">
+        HELLO, I'M FATHIMA ZIA
     </div>
 
     <h1>
-      FATHIMA<br>
-      <span>ZIA P.</span>
+        THINK.<br>
+        <span>CREATE.</span><br>
+        INSPIRE.
     </h1>
 
     <p>
-      A designer lost in thoughts and a digital marketer.
-      I turn creative ideas into meaningful visual experiences
-      and digital stories.
+        A creative-minded designer and digital marketer
+        passionate about transforming ideas into meaningful
+        visual experiences and digital stories.
     </p>
 
-  </section>
+</section>
 
 
-  <!-- =========================
-       ABOUT ME
-  ========================= -->
+<!-- =========================
+     ABOUT ME
+========================= -->
 
-  <section class="about">
+<section class="about" id="about">
 
     <div class="section-label">
-      A LITTLE ABOUT ME
+        A LITTLE ABOUT ME
     </div>
 
     <h2>
-      Creativity is my <span>language.</span>
+        Creativity is my <span>language.</span>
     </h2>
 
     <p>
-      I am a BCom graduate with a passion for graphic design
-      and digital marketing. I enjoy creating visual identities,
-      designing engaging content, building digital strategies,
-      and exploring creative possibilities through video editing
-      and AI animation. I believe every idea has a story worth
-      telling through design.
+        I am a BCom graduate with a passion for graphic design
+        and digital marketing. I enjoy creating visual identities,
+        designing engaging content, building digital strategies
+        and exploring creative possibilities through video editing
+        and animation.
+
+        I believe every idea has a story worth telling through design.
     </p>
 
-  </section>
+</section>
 
 
-  <!-- =========================
-       MY SKILLS
-  ========================= -->
+<!-- =========================
+     SKILLS
+========================= -->
 
-  <section class="skills">
+<section class="skills" id="skills">
 
     <div class="section-label">
-      WHAT I DO
+        WHAT I DO
     </div>
 
     <h2>My Creative Toolkit</h2>
 
     <div class="skill-grid">
 
-      <div class="skill-card">
+        <div class="skill-card">
 
-        <h3>Graphic Design & Branding</h3>
+            <h3>01. Graphic Design</h3>
 
-        <p>
-          Photoshop · Illustrator · CorelDRAW · Canva ·
-          Brand Identity · Visual Design
-        </p>
+            <p>
+                Photoshop · Illustrator · CorelDRAW · Canva ·
+                Brand Identity · Visual Communication
+            </p>
 
-      </div>
-
-
-      <div class="skill-card">
-
-        <h3>Digital Marketing</h3>
-
-        <p>
-          SEO · Google Ads · Meta Ads · Social Media Marketing ·
-          GA4 · Content Strategy
-        </p>
-
-      </div>
+        </div>
 
 
-      <div class="skill-card">
+        <div class="skill-card">
 
-        <h3>Video & Motion</h3>
+            <h3>02. Digital Marketing</h3>
 
-        <p>
-          Premiere Pro · After Effects · CapCut ·
-          Video Editing · Motion Graphics
-        </p>
+            <p>
+                SEO · Google Ads · Meta Ads · Social Media Marketing ·
+                GA4 · Content Strategy
+            </p>
 
-      </div>
+        </div>
 
 
-      <div class="skill-card">
+        <div class="skill-card">
 
-        <h3>AI & Animation</h3>
+            <h3>03. Video & Motion</h3>
 
-        <p>
-          AI Animation · AI Image Generation ·
-          Creative Storytelling · 3D Visual Concepts
-        </p>
+            <p>
+                Premiere Pro · After Effects · CapCut ·
+                Video Editing · Motion Graphics
+            </p>
 
-      </div>
+        </div>
+
+
+        <div class="skill-card">
+
+            <h3>04. AI & Animation</h3>
+
+            <p>
+                AI Image Generation · AI Animation ·
+                Creative Storytelling · 3D Visual Concepts
+            </p>
+
+        </div>
 
     </div>
 
-  </section>
+</section>
 
 
-  <!-- =========================
-       FOOTER
-  ========================= -->
+<!-- =========================
+     CONTACT
+========================= -->
 
-  <footer>
+<section class="contact" id="contact">
+
+    <div class="section-label">
+        LET'S CONNECT
+    </div>
+
+    <h2>Have an idea?</h2>
+
+    <p>
+        Let's turn your next creative thought into something amazing.
+    </p>
+
+    <a href="mailto:YOUR_EMAIL@example.com" class="contact-btn">
+        SAY HELLO →
+    </a>
+
+</section>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
 
     © 2026 Fathima Zia P. All rights reserved.
 
-  </footer>
+</footer>
 
 
-  <!-- =========================
-       MOUSE INTERACTION
-  ========================= -->
+<!-- =========================
+     CURSOR CONTROLLED VIDEO
+========================= -->
 
-  <script>
+<script>
 
-    const hero = document.querySelector('.hero');
-    const character = document.getElementById('character');
+const hero = document.querySelector(".hero");
+const video = document.getElementById("thinkingVideo");
 
-    // Desktop cursor interaction
+let targetTime = 0;
+let isSeeking = false;
+let animationFrame = null;
+let videoReady = false;
 
-    hero.addEventListener('mousemove', (event) => {
 
-      if (window.innerWidth <= 700) return;
+// Wait for video metadata
 
-      const rect = hero.getBoundingClientRect();
+video.addEventListener("loadedmetadata", () => {
 
-      const mouseX =
-        (event.clientX - rect.left) / rect.width - 0.5;
+    videoReady = true;
 
-      const mouseY =
-        (event.clientY - rect.top) / rect.height - 0.5;
+    video.pause();
 
-      const moveX = mouseX * 35;
-      const moveY = mouseY * 20;
+    // Start at the middle frame
 
-      character.style.transform =
-        `translate(calc(-50% + ${moveX}px), ${moveY}px)`;
+    targetTime = video.duration / 2;
+
+    video.currentTime = targetTime;
+
+});
+
+
+// Mouse movement controls video timeline
+
+function handleCursor(event) {
+
+    if (!videoReady) return;
+
+    const rect = hero.getBoundingClientRect();
+
+    // Get cursor position from 0 to 1
+
+    let mousePosition =
+        (event.clientX - rect.left) / rect.width;
+
+    mousePosition = Math.max(0, Math.min(1, mousePosition));
+
+    // Convert cursor position to video time
+
+    targetTime = mousePosition * (video.duration - 0.05);
+
+    updateVideo();
+
+}
+
+
+// Smooth video scrubbing
+
+function updateVideo() {
+
+    if (!videoReady || isSeeking || animationFrame) return;
+
+    animationFrame = requestAnimationFrame(() => {
+
+        animationFrame = null;
+
+        if (isSeeking) return;
+
+        const difference = targetTime - video.currentTime;
+
+        if (Math.abs(difference) > 0.025) {
+
+            isSeeking = true;
+
+            video.currentTime = Math.max(
+                0,
+                Math.min(video.duration - 0.01, targetTime)
+            );
+
+        }
 
     });
 
-
-    // Return to original position
-
-    hero.addEventListener('mouseleave', () => {
-
-      character.style.transform = 'translateX(-50%)';
-
-    });
+}
 
 
-    // Prevent cursor interaction on mobile
+// Wait until current frame is loaded
 
-    window.addEventListener('resize', () => {
+video.addEventListener("seeked", () => {
 
-      if (window.innerWidth <= 700) {
-        character.style.transform = 'translateX(-50%)';
-      }
+    isSeeking = false;
 
-    });
+    // Continue if cursor moved while video was seeking
 
-  </script>
+    if (Math.abs(targetTime - video.currentTime) > 0.025) {
+
+        updateVideo();
+
+    }
+
+});
+
+
+// Desktop and touch cursor interaction
+
+hero.addEventListener("pointermove", handleCursor);
+
+
+// Return to centre when cursor leaves
+
+hero.addEventListener("pointerleave", () => {
+
+    if (!videoReady) return;
+
+    targetTime = video.duration / 2;
+
+    updateVideo();
+
+});
+
+</script>
 
 </body>
 </html>
